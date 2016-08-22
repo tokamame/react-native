@@ -32,7 +32,7 @@ var index = React.createClass({
 
           <div style={{margin: '40px auto', maxWidth: 800}}>
 
-          <h2>Build Native Mobile Apps using JavaScript and React</h2>
+          <h2>Создавайте полноценные мобильные приложения, используя JavaScript и React</h2>
           <p>
             React Native lets you build mobile apps using only JavaScript. It uses the same design as React, letting you compose a rich mobile UI from declarative components.
           </p>

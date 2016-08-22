@@ -15,7 +15,7 @@ const CIRCLE_BRANCH = process.env.CIRCLE_BRANCH;
 const CIRCLE_PROJECT_USERNAME = process.env.CIRCLE_PROJECT_USERNAME;
 const CI_PULL_REQUEST = process.env.CI_PULL_REQUEST;
 const GIT_USER = process.env.GIT_USER;
-const remoteBranch = `https://${GIT_USER}@github.com/facebook/react-native.git`;
+const remoteBranch = `https://github.com/egeshi/react-native.git`;
 
 if (!which(`git`)) {
   echo(`Sorry, this script requires git`);

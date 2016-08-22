@@ -15,7 +15,7 @@ var React = require('React');
 function getVersionedGithubPath(path, version) {
   version = version || 'next';
   return [
-    'https://github.com/facebook/react-native/blob',
+    'https://github.com/egeshi/react-native/blob',
     version === 'next' ? 'master' : version + '-stable',
     path
   ].join('/');

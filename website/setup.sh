@@ -12,9 +12,9 @@ cd "$(dirname "$0")"
 
 cd ../../
 if [ "$TRAVIS" ]; then
-  git clone "https://reactjs-bot@github.com/facebook/react-native.git" react-native-gh-pages
+  git clone "https://egeshi@github.com/egeshi/react-native.git" react-native-gh-pages
 else
-  git clone git://github.com/facebook/react-native.git react-native-gh-pages
+  git clone git://github.com/egeshi/react-native.git react-native-gh-pages
 fi
 cd react-native-gh-pages
 git checkout origin/gh-pages
