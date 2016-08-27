@@ -43,7 +43,7 @@ if (branchWithLatestTag.indexOf(`-stable`) !== -1) {
   latestVersion = branchWithLatestTag.slice(0, branchWithLatestTag.indexOf(`-stable`));
 }
 
-if (!CI_PULL_REQUEST && CIRCLE_PROJECT_USERNAME === `facebook`) {
+if (!CI_PULL_REQUEST && CIRCLE_PROJECT_USERNAME === `egeshi`) {
   echo(`Building branch ${version}, preparing to push to gh-pages`);
   // if code is running in a branch in CI, commit changes to gh-pages branch
   cd(`build`);
