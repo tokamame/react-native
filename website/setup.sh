@@ -17,7 +17,7 @@ else
   git clone git://github.com/egeshi/react-native.git react-native-gh-pages
 fi
 cd react-native-gh-pages
-git checkout origin/gh-pages
-git checkout -b gh-pages
-git branch --set-upstream-to=origin/gh-pages
+git checkout origin/gh-pages-ru
+git checkout -b gh-pages-ru
+git branch --set-upstream-to=origin/gh-pages-ru
 cd ../react-native/website
