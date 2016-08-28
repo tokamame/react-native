@@ -109,6 +109,7 @@ react_library(
   force_static = True,
   srcs = [
     'CxxMessageQueue.cpp',
+    'CxxNativeModule.cpp',
     'Executor.cpp',
     'Instance.cpp',
     'JSCExecutor.cpp',
@@ -125,6 +126,7 @@ react_library(
     'NativeToJsBridge.cpp',
     'Platform.cpp',
     'Value.cpp',
+    'Unicode.cpp',
   ],
   headers = [
     'JSCLegacyProfiler.h',
@@ -136,6 +138,7 @@ react_library(
   ],
   exported_headers = [
     'CxxMessageQueue.h',
+    'CxxNativeModule.h',
     'Executor.h',
     'ExecutorToken.h',
     'ExecutorTokenFactory.h',
@@ -153,6 +156,7 @@ react_library(
     'Platform.h',
     'SystraceSection.h',
     'Value.h',
+    'Unicode.h',
   ],
   preprocessor_flags = [
     '-DLOG_TAG="ReactNative"',
@@ -165,7 +169,9 @@ react_library(
     '-frtti',
   ] + REACT_LIBRARY_EXTRA_COMPILER_FLAGS,
   deps = [
+    ':module',
     '//xplat/fbsystrace:fbsystrace',
+    react_native_xplat_target('microprofiler:microprofiler'),
   ],
   visibility = [ 'PUBLIC' ],
 )
