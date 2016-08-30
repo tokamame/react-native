@@ -21,8 +21,8 @@ var Site = React.createClass({
     var basePath = '/react-native/' + (path ? path + '/' : '');
     var title = this.props.title ? this.props.title + ' – ' : '';
     var currentYear = (new Date()).getFullYear();
-    title += 'React Native на русском | Фреймворк для разработки нативных приложений на React';
-    var description = this.props.description ? this.props.description : 'Фреймворк для разработки нативных приложений на React';
+    title += 'React Native на русском | Фреймворк для разработки нативных мобильных приложений на React';
+    var description = this.props.description ? this.props.description : 'Фреймворк для разработки нативных мобильных приложений на React';
     var shareURL = 'https://github.com/egeshi/react-native/';
     shareURL += this.props.path ? this.props.path : 'index.html';
 
