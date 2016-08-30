@@ -18,7 +18,7 @@ var ReadMoreLink = React.createClass({
     return (
       <footer className="entry-readmore">
         <a href={this.props.href} className="btn">
-          Больше
+            Далее
         </a>
       </footer>
     );
