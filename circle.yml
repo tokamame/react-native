@@ -2,6 +2,7 @@ general:
   branches:
     ignore:
       - gh-pages # list of branches to ignore
+      - gh-pages-ru # list of branches to ignore
 machine:
   node:
     version: 6.2.0
