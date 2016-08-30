@@ -1,66 +1,66 @@
-# React Native [![Build Status](https://travis-ci.org/facebook/react-native.svg?branch=master)](https://travis-ci.org/facebook/react-native) [![Circle CI](https://circleci.com/gh/facebook/react-native.svg?style=svg)](https://circleci.com/gh/facebook/react-native) [![npm version](https://badge.fury.io/js/react-native.svg)](https://badge.fury.io/js/react-native)
+# React Native [![Build Status](https://travis-ci.org/egeshi/react-native.svg?branch=master)](https://travis-ci.org/egeshi/react-native) [![Circle CI](https://circleci.com/gh/facebook/react-native.svg?style=svg)](https://circleci.com/gh/facebook/react-native) [![npm version](https://badge.fury.io/js/react-native.svg)](https://badge.fury.io/js/react-native)
 
-React Native enables you to build world-class application experiences on native platforms using a consistent developer experience based on JavaScript and [React](https://facebook.github.io/react). The focus of React Native is on developer efficiency across all the platforms you care about - learn once, write anywhere. Facebook uses React Native in multiple production apps and will continue investing in React Native.
+React Native позволяет Вам создвать приложения мирового класса на нативных платформах, используя имеющийся опыт разработки на основе JavaScript и [React](https://facebook.github.io/react). React Native сконцентирован на предложении одинаковой эффективности для разработчика на всех платформах, которые вам интересны - выучи однажды, пиши везде. Facebook использует React Native в различных рабочих мобильных приложениях и будет продолжать инвестировать в React Native.
 
-Supported operating systems are >= Android 4.1 (API 16) and >= iOS 7.0.
+Поддерживаемые операционные системы >= Android 4.1 (API 16) и >= iOS 7.0.
 
-- [Getting Started](#getting-started)
-- [Getting Help](#getting-help)
-- [Documentation](#documentation)
-- [Examples](#examples)
-- [Extending React Native](#extending-react-native)
-- [Upgrading](#upgrading)
-- [Opening Issues](#opening-issues)
-- [Contributing](#contributing)
-- [License](#license)
+- [С чего начать?](#getting-started)
+- [Получение помощи](#getting-help)
+- [Документация](#documentation)
+- [Примеры](#examples)
+- [Расширение React Native](#extending-react-native)
+- [Обновление](#upgrading)
+- [Запросы](#opening-issues)
+- [Содействие](#contributing)
+- [Лицензия](#license)
 
-## Introduction
+## Введение
 
-See the official [React Native website](https://facebook.github.io/react-native/) for an introduction to React Native.
+Введение в React Native на русском можно изучить на [сайте русской документации по React Native](http://reactnativedocs.ru/).
 
-## Getting Started
+## С чего начать?
 
-- Follow the [Getting Started guide](https://facebook.github.io/react-native/docs/getting-started.html) to install React Native and its dependencies.
-- Check out this [tutorial](https://facebook.github.io/react-native/docs/sample-application-movies.html) to walk through your first project that fetches real data and displays it in a list.
-- [Open the UIExplorer example project](#examples) to see a list of components that ship with React Native.
-- Install the React Developer Tools for [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) or [Firefox](https://addons.mozilla.org/firefox/addon/react-devtools/) for better debugging [(read more)](https://facebook.github.io/react-native/docs/debugging.html).
-- Try out apps from the [Showcase](https://facebook.github.io/react-native/showcase.html) to see what React Native is capable of!
+- Для установки React Native и зависимостей изучите [руководство для начинающих](https://facebook.github.io/react-native/docs/getting-started.html).
+- Чтобы создать свой первый проект, который получает реальные данные и выводит их на экран в списке, изучите [этот урок](https://facebook.github.io/react-native/docs/sample-application-movies.html).
+- Изучить список компонентов, которые поставляются вместе с React Native, используйте в качестве примера [проект UIExplorer](#examples).
+- Для отладки приложений установите инструменты разработчика React для [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) или [Firefox](https://addons.mozilla.org/firefox/addon/react-devtools/) [(узнать больше)](https://facebook.github.io/react-native/docs/debugging.html).
+- Попробуйте мобильные приложения с [Выставки](https://facebook.github.io/react-native/showcase.html) чтобы увидеть на что способен React Native!
 
-## Getting Help
+## Получение помощи
 
-Please use these community resources for getting help. We use the GitHub issues for tracking bugs and feature requests and have limited bandwidth to address them.
+Для получения помощи используйте ресурсы сообщества. Используйте GitHub для того, чтобы сообщить об ошибке и для запроса новых функций.
 
-- Ask a question on [StackOverflow](https://stackoverflow.com/) and tag it with `react-native`
-- Chat with us on [Reactiflux](https://discord.gg/0ZcbPKXt5bWJVmUY) in #react-native
-- Articulate your feature request or upvote existing ones on [Product Pains](https://productpains.com/product/react-native/)
-- Start a thread on the [React Discussion Board](https://discuss.reactjs.org/)
-- Join #reactnative on IRC: chat.freenode.net
-- If it turns out that you may have found a bug, please [open an issue](#opening-issues)
+- Задайте вопрос с тегом `react-native` на [StackOverflow](https://stackoverflow.com/)
+- С командой всегда можно пообщаться в чате [Reactiflux](https://discord.gg/0ZcbPKXt5bWJVmUY) на канале #react-native
+- Ясно сформулируйте свой запрос новых функций или голосуйте за существующие на [Product Pains](https://productpains.com/product/react-native/)
+- Начните дискуссию на [React Discussion Board](https://discuss.reactjs.org/)
+- Подключайтесь к каналу  #reactnative на IRC: chat.freenode.net
+- Если вы думаете что обнаружили ошибку, пожалуйста [создайте запрос](#opening-issues)
 
-## Documentation
+## Документация
 
-[The website’s documentation](https://facebook.github.io/react-native/docs/) is divided into multiple sections.
-- There are **Guides** that discuss topics like [debugging](https://facebook.github.io/react-native/docs/debugging.html), [integrating with existing apps](https://facebook.github.io/react-native/docs/integration-with-existing-apps.html), and [the gesture responder system](https://facebook.github.io/react-native/docs/gesture-responder-system.html).
-- The **Components** section covers React components such as [`View`](https://facebook.github.io/react-native/docs/view.html) and [`Navigator`](https://facebook.github.io/react-native/docs/navigator.html).
-- The **APIs** section covers other libraries like [Animated](https://facebook.github.io/react-native/docs/animated.html) and [StyleSheet](https://facebook.github.io/react-native/docs/stylesheet.html) that aren’t React components themselves.
-- Finally, React Native provides a small number of **Polyfills** that offer web-like APIs.
+[Документация на сайте](http://reactnativedocs.ru/) разделена на несколько разделов.
+- Есть **уроки** в которых рассказывается об [отладке](http://reactnativedocs.ru/docs/debugging.html), [интеграции с существующими мобильными приложениями](http://reactnativedocs.ru/docs/integration-with-existing-apps.html), и [системой распознавания жестов](http://reactnativedocs.ru/docs/gesture-responder-system.html).
+- Раздел **Компоненты** описываются компоненты React, такие как [`View`](http://reactnativedocs.ru/docs/view.html) и [`Navigator`](http://reactnativedocs.ru/docs/navigator.html).
+- Раздел **API** рассказывает о других библиотеках, таких как [Animated](http://reactnativedocs.ru/docs/animated.html) и [StyleSheet](http://reactnativedocs.ru/docs/stylesheet.html) которые непосредственно не являются компонентами React.
+- Также React Native предоставляет некоторые **Polyfills** которые предлагают web-подобные API.
 
-Another great way to learn more about the components and APIs included with React Native is to read their source. Look under the `Libraries` directory for components like `ScrollView` and `Navigator`, for example. The UIExplorer example is also here to demonstrate some of the ways to use these components. From the source you can get an accurate understanding of each component’s behavior and API.
+Пожалуй самый отличный способ узнать больше о компонентах и APIs, включенных в React Native, состоит в том, чтобы читать код. В каталоге `Libraries` вы можете найти исходный код таких компонентов как, например `ScrollView` и `Navigator`. Пример UIExplorer демонстрирует некоторые способы использования этих компонентов. Из исходного кода можно получить точное понимание работы каждого из компонентов и API.
 
-The React Native documentation only discusses the components, APIs and topics specific to React Native (React on iOS and Android). For further documentation on the React API that is shared between React Native and React DOM, refer to the [React documentation](https://facebook.github.io/react/).
+Документация по React Native освещает только компоненты API и темы, специфические для React Native (React on iOS and Android). Для более полной документации относительно API React, который совместно используется React Native и React DOM, обратитесь к [документации по React](https://facebook.github.io/react/).
 
-## Examples
+## Примеры
 
 - `git clone https://github.com/facebook/react-native.git`
 - `cd react-native && npm install`
 
-### Running the examples on iOS
+### Запуск примеров на iOS
 
-Now open any example (the `.xcodeproj` file in each of the `Examples` subdirectories) and hit Run in Xcode.
+Теперь просто откройте любой пример (файл `.xcodeproj` в каждом из подкаталогов в директории `Examples`) и выберите Run в Xcode.
 
-### Running the examples on Android
+### Запуск примеров на Android
 
-Note that you'll need the Android NDK installed, see [prerequisites](https://github.com/facebook/react-native/blob/master/ReactAndroid/README.md#prerequisites).
+Не забудьте что вам понадобится установленный Android NDK подробности смотрите в [зависимостях](https://github.com/egeshi/react-native/blob/master/ReactAndroid/README.md#prerequisites).
 
 ```bash
 ./gradlew :Examples:Movies:android:app:installDebug
@@ -69,35 +69,35 @@ Note that you'll need the Android NDK installed, see [prerequisites](https://git
 # Open the Movies app in your emulator
 ```
 
-## Extending React Native
+## Расширение React Native
 
-- Looking for a component? [JS.coach](https://js.coach/react-native)
-- Fellow developers write and publish React Native modules to npm and open source them on GitHub.
-- Making modules helps grow the React Native ecosystem and community. We recommend writing modules for your use cases and sharing them on npm.
-- Read the guides on Native Modules ([iOS](https://facebook.github.io/react-native/docs/native-modules-ios.html), [Android](https://facebook.github.io/react-native/docs/native-modules-android.html)) and Native UI Components ([iOS](https://facebook.github.io/react-native/docs/native-components-ios.html), [Android](https://facebook.github.io/react-native/docs/native-components-android.html)) if you are interested in extending native functionality.
+- Ищете компонент? [JS.coach](https://js.coach/react-native)
+- Разработчики пишут и публикуют модули React Native в npm и выкладывают открытый код на GitHub.
+- Создание модулей помогает расширять экосистему React Native и сообщество. Рекомендуется писать модули для ваших вариантов использования и добавлять их в npm.
+- Если вы интересуетесь расширением нативной функциональности, изучайте руководства по нативным модулям ([iOS](http://reactnativedocs.ru/docs/native-modules-ios.html), [Android](http://reactnativedocs.ru/docs/native-modules-android.html)) и нативным компонентам UI ([iOS](http://reactnativedocs.ru/docs/native-components-ios.html), [Android](http://reactnativedocs.ru/docs/native-components-android.html)).
 
-## Upgrading
+## Обновление
 
-React Native is under active development. See the guide on [upgrading React Native](https://facebook.github.io/react-native/docs/upgrading.html) to keep your project up-to-date.
+React Native находится в процессе активного развития. Смотрите руководство по [обновлению React Native](http://reactnativedocs.ru/docs/upgrading.html) для сохранения своего проекта актуальным.
 
-## Opening Issues
+## Создание вопросов
 
-If you encounter a bug with React Native we would like to hear about it. Search the [existing issues](https://github.com/facebook/react-native/issues) and try to make sure your problem doesn’t already exist before opening a new issue. It’s helpful if you include the version of React Native and OS you’re using. Please include a stack trace and reduced repro case when appropriate, too.
+Если вы заметили ошибку в React Native, разработчики хотели бы узнать о ней. Просмотрите [существующие вопросы](https://github.com/facebook/react-native/issues) и, прежде чем открыть новый вопрос, попытайтесь убедиться что ваша проблема еще не замечена. Всегда полезно указать версию React Native и ОС, которые вы используете. Пожалуйста, также добавляйте лог стека и уменьшенный кейс репозитории когда это возможно.
 
-The GitHub issues are intended for bug reports and feature requests. For help and questions with using React Native please make use of the resources listed in the [Getting Help](#getting-help) section. [Product Pains](https://productpains.com/product/react-native/) in particular is a good way to signal your interest in a feature or issue. There are limited resources available for handling issues and by keeping the list of open issues lean we can respond in a timely manner.
+Вопросы на GitHub предназначены для отчетов об ошибках и запросов новых функций. Для помощи и вопросов по использованию React Native используйте ресурсы, перечисленные в разделе [Получение помощи](#getting-help). [Product Pains](https://productpains.com/product/react-native/) - особенно  хороший способ чтобы рассказать про ваш интерес к функции или проблеме. Ресурсы для обработви проблем ограничены и, сохраняя список нерешенных вопросов небольшим, команда разработчиков сможет ответить достаточно быстро.
 
-## Contributing
+## Содействие
 
-For more information about contributing PRs and issues, see our [Contribution Guidelines](https://github.com/facebook/react-native/blob/master/CONTRIBUTING.md).
+Для получения дополнительной информации о содействии PR и запросов, смотрите [Contribution Guidelines](https://github.com/facebook/react-native/blob/master/CONTRIBUTING.md).
 
-[Good First Task](https://github.com/facebook/react-native/labels/Good%20First%20Task) is a great starting point for PRs.
+[Хорошее первое задание](https://github.com/facebook/react-native/labels/Good%20First%20Task) - лучшая отправная точка для PR.
 
-We encourage the community to ask and answer questions on Stack Overflow with [the react-native tag](https://stackoverflow.com/questions/tagged/react-native). It's a great way to help out and be involved!
+Разрабочики поощряют сообщество спрашивать и отвечать на вопросы на Stack Overflow с [тегом react-native](https://stackoverflow.com/questions/tagged/react-native).  Это отличный способ помочь и включиться в сообщество!
 
-## License
+## Лицензия
 
-React is [BSD licensed](./LICENSE). We also provide an additional [patent grant](./PATENTS).
+React распространяется по лицензии [BSD licensed](./LICENSE). Также выделяются дополнительные [патентные права](./PATENTS).
 
-React documentation is [Creative Commons licensed](./LICENSE-docs).
+Документация по React распространяется по [лицензии Creative Commons](./LICENSE-docs).
 
-Examples provided in this repository and in the documentation are [separately licensed](./LICENSE-examples), as are some of the [custom components](./LICENSE-CustomComponents).
+Примеры, предоставленные в этом репозитории и в документации [лицензируются отдельно](./LICENSE-examples), так же как и некоторые из [пользовательских компонентов](./LICENSE-CustomComponents).

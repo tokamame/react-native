@@ -1,20 +1,15 @@
 ---
 id: quick-start-getting-started
-title: Getting Started
+title: Поехали!
 layout: docs
-category: The Basics
+category: Основы
 permalink: docs/getting-started.html
 next: tutorial
 ---
 
-Welcome to React Native! This page will help you install React Native on
-your system, so that you can build apps with it right away. If you already
-have React Native installed, you can skip ahead to the
-[Tutorial](/react-native/docs/tutorial.html).
+Добро пожаловать в React Native! Инструкции на этой странице помогут вам установить React Native на своей системе и вы сразу сможете создать приложение. Если вы уже установили React Native, то сразу переходите к [уроку](/react-native/docs/tutorial.html).
 
-The instructions are a bit different depending on your development operating system, and whether you want to start developing for iOS or Android. If you
-want to develop for both iOS and Android, that's fine - you just have to pick
-one to start with, since the setup is a bit different.
+В зависимости от операционной системы , в которой вы ведете разработку, инструкции несколько отличаются для iOS или Android. Если вы собираетесь создавать кроссплатформенные приложения для iOS и Android, это прекрасно - просто выберите целевую ОС и ОС среды разработки ниже, так как процесс установки для разных систем имеет некоторые отличия.
 
 <div class="toggler">
 <style>
@@ -43,10 +38,10 @@ block { display: none; }
 .display-platform-android.display-os-windows .android.windows {
   display: block;
 }</style>
-<span>Mobile OS:</span>
+<span>Мобильная ОС:</span>
 <a href="javascript:void(0);" class="button-ios" onclick="display('platform', 'ios')">iOS</a>
 <a href="javascript:void(0);" class="button-android" onclick="display('platform', 'android')">Android</a>
-<span>Development OS:</span>
+<span>ОС разработки:</span>
 <a href="javascript:void(0);" class="button-mac" onclick="display('os', 'mac')">Mac</a>
 <a href="javascript:void(0);" class="button-linux" onclick="display('os', 'linux')">Linux</a>
 <a href="javascript:void(0);" class="button-windows" onclick="display('os', 'windows')">Windows</a>
@@ -56,9 +51,9 @@ block { display: none; }
 
 <block class="linux windows ios" />
 
-## Unsupported
+## Не поддерживается
 
-<div>Unfortunately, Apple only lets you develop for iOS on a Mac. If you want to build an iOS app but you don't have a Mac yet, you can try starting with the <a href="" onclick="display('platform', 'android')">Android</a> instructions instead.</div>
+<div>К сожалению Aplle позволяет производить разработку для iOS только на системах Mac. Если вы хотите разрабатывать мобильные приложения для iOS, но все еще не приобрели Mac, вы можете попробовать начать с инструкций для <a href="" onclick="display('platform', 'android')">Android</a>.</div>
 
 <center><img src="img/react-native-sorry-not-supported.png" width="150"></img></center>
 
@@ -66,67 +61,67 @@ block { display: none; }
 
 <block class="mac ios" />
 
-## Dependencies for Mac + iOS
+## Зависимости для Mac + iOS
 
-You will need Xcode, node.js, the React Native command line tools, and Watchman.
+Вам потребуются Xcode, node.js, инструменты командной строки React Native и Watchman.
 
 <block class="mac android" />
 
-## Dependencies for Mac + Android
+## Зависимости для Mac + Android
 
-You will need Android Studio, node.js, the React Native command line tools, and Watchman.
+Вам потребуются Android Studio, node.js, инструменты командной строки React Native, и Watchman.
 
 <block class="mac ios android" />
 
-We recommend installing node and watchman via [Homebrew](http://brew.sh/).
+Мы рекомендуем устанавливать Watchman с помощью [Homebrew](http://brew.sh/).
 
 ```
 brew install node
 brew install watchman
 ```
 
-Node comes with npm, which lets you install the React Native command line interface.
+Node включает в себя npm, с помощью которго вы сможете установить иснструменты командной строки React Native.
 
 ```
 npm install -g react-native-cli
 ```
 
-If you get a permission error, try with sudo: `sudo npm install -g react-native-cli`.
+Если вы увидите ошибку, связанную с доступом к файлам, попробуйте повторить установку через sudo: `sudo npm install -g react-native-cli`.
 
-If you get error `Cannot find module 'npmlog'`, try this before: `curl -0 -L http://npmjs.org/install.sh | sudo sh`.
+Если вы увидите ошибку `Cannot find module 'npmlog'`, попробуйте сначала запустить: `curl -0 -L http://npmjs.org/install.sh | sudo sh`.
 
 <block class="mac ios" />
 
-The easiest way to install Xcode is via the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
+Установить Xcode проще всего из [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
 
 <block class="mac android" />
 
-Download and install [Android Studio](https://developer.android.com/studio/install.html).
+Загрузите и установите [Android Studio](https://developer.android.com/studio/install.html).
 
-If you plan to make changes in Java code, we recommend [Gradle Daemon](https://docs.gradle.org/2.9/userguide/gradle_daemon.html) which speeds up the build.
+Если вы планируете вносить изменения в код Java, мы бы посоветовали [Gradle Daemon](https://docs.gradle.org/2.9/userguide/gradle_daemon.html), который значительно ускоряет сборку.
 
 
 <!-- ######### LINUX and WINDOWS for ANDROID ##################### -->
 
 <block class="linux android" />
 
-## Dependencies for Linux + Android
+## Зависимости для Linux + Android
 
 <block class="windows android" />
 
-## Dependencies for Windows + Android
+## Зависимости для Windows + Android
 
 <block class="linux windows android" />
 
-You will need node.js, the React Native command line tools, Watchman, and Android Studio.
+Вам потребуется node.js, инструменты командной строки React Native, Watchman, и Android Studio.
 
 <block class="linux android" />
 
-Follow the [installation instructions for your Linux distribution](https://nodejs.org/en/download/package-manager/) to install Node.js 4 or newer.
+Для установки Node.js версии 4 или полее поздней следуйте [инструкции по установке для вашего дистрибутива Linux](https://nodejs.org/en/download/package-manager/) to install Node.js 4 or newer.
 
 <block class='windows android' />
 
-We recommend installing node.js and Python2 via [Chocolatey](https://chocolatey.org), a popular package manager for Windows. Open a Command Prompt as Administrator, then run:
+Для установки node.js и Python2 рекоменуем воспользоваться [Chocolatey](https://chocolatey.org), популярный менеджер пакетов для Windows. Откройте командную строку в роли Администратора, а затем запустите:
 
 ```
 choco install nodejs.install
@@ -135,7 +130,7 @@ choco install python2
 
 <block class="windows linux android" />
 
-Node comes with npm, which lets you install the React Native command line interface.
+Node поставляется с npm, с помощью которого вы сможете установить инструменты командной строки React Native.
 
 ```
 npm install -g react-native-cli
@@ -143,24 +138,23 @@ npm install -g react-native-cli
 
 <block class="windows linux android" />
 
-Download and install [Android Studio](https://developer.android.com/studio/install.html).
+Загрузите и установите [Android Studio](https://developer.android.com/studio/install.html).
 
 <block class="linux android" />
 
-[Watchman](https://facebook.github.io/watchman) is a tool by Facebook for watching changes in the filesystem. Installing it should
-improve performance, but you can also try not installing it, if the installation process is too annoying. You can follow the [Watchman installation guide](https://facebook.github.io/watchman/docs/install.html#installing-from-source) to compile and install from source.
+[Watchman](https://facebook.github.io/watchman) это инструмент, созданный Facebook для наблюдения за изменениями в файловой системе. Его использование поможет увеличить производительность, но вам необязательно его устанавливать если процесс установки окажется слишком сложным. Используйте [инструкции по установке Watchman](https://facebook.github.io/watchman/docs/install.html#installing-from-source) чтобы скомпилировать его из исходного кода.
 
 <block class="windows linux android" />
 
-If you plan to make changes in Java code, we recommend [Gradle Daemon](https://docs.gradle.org/2.9/userguide/gradle_daemon.html) which speeds up the build.
+Если вы планируете вносить изменения в код Java, мы бы посоветовали [Gradle Daemon](https://docs.gradle.org/2.9/userguide/gradle_daemon.html), который значительно ускоряет сборку.
 
 <block class="mac ios android" />
 
-## Testing your React Native Installation
+## Проверка установки React Native
 
 <block class="mac ios" />
 
-Use the React Native command line tools to generate a new React Native project called "AwesomeProject", then run `react-native run-ios` inside the newly created folder.
+Для создания проекта "AwesomeProject" используйте командную строку React Native, затем выполните `react-native run-ios` в созданной папке.
 
 ```
 react-native init AwesomeProject
@@ -168,11 +162,11 @@ cd AwesomeProject
 react-native run-ios
 ```
 
-You should see your new app running in the iOS Simulator shortly. `react-native run-ios` is just one way to run your app - you can also run it directly from within Xcode or Nuclide.
+Вскоре вы увидите приложение, запущенное в симуляторе iOS. `react-native run-ios` это только один из нескольких способой запустить ваше мобильное приложение. Вы также можете запустить его непосредственно из Xcode или Nuclide.
 
 <block class="mac android" />
 
-Use the React Native command line tools to generate a new React Native project called "AwesomeProject", then run `react-native run-android` inside the newly created folder.
+Для создания проекта "AwesomeProject" используйте командную строку React Native, затем выполните `react-native run-android` в созданной папке.
 
 ```
 react-native init AwesomeProject
@@ -180,37 +174,37 @@ cd AwesomeProject
 react-native run-android
 ```
 
-If everything is set up correctly, you should see your new app running in your Android emulator shortly. `react-native run-android` is just one way to run your app - you can also run it directly from within Android Studio or Nuclide.
+Спустя недолгое время вы увидите приложение, запущенное в эмуляторе Android. `react-native run-android`  это только один из нескольких способой запустить ваше мобильное приложение. Вы также можете запустить его непосредственно из Android Studio или Nuclide.
 
 <block class="mac ios android" />
 
-### Modifying your app
+### Внесение изменений в код вашего мобильного приложения
 
-Now that you have successfully run the app, let's modify it.
+После того как вы смогли запустить мобильное приложение, можно попробовать внести изменения в его код.
 
 <block class="mac ios" />
 
-- Open `index.ios.js` in your text editor of choice and edit some lines.
-- Hit `Command⌘ + R` in your iOS Simulator to reload the app and see your change!
+- Откройте `index.ios.js` в текстовом редакторе и измените какие-то строки кода.
+- Чтобы изменения отобразились в симуляторе iOS, нажмите `Command⌘ + R` и мобильное приложение обновится!
 
 <block class="mac android" />
 
-- Open `index.android.js` in your text editor of choice and edit some lines.
-- Press the `R` key twice or select `Reload` from the Developer Menu to see your change!
+- Откройте `index.android.js` в текстовом редакторе и измените какие-то строки кода.
+- Дважды нажмите клавишу `R` или выберите `Reload` из Меню Разработчика (Developer Menu) для того чтобы внесенные изменения отобразились в эмуляторе Android!
 
 <block class="mac ios android" />
 
-### That's it!
+### Готово!
 
-Congratulations! You've successfully run and modified your first React Native app.
+Поздравляем! Вы успешно запустили и изменили мобильное приложение React Native.
 
 <center><img src="img/react-native-congratulations.png" width="150"></img></center>
 
 <block class="windows linux android" />
 
-## Testing your React Native Installation
+## Проверка установки React Native
 
-Use the React Native command line tools to generate a new React Native project called "AwesomeProject", then run `react-native run-android` inside the newly created folder.
+Для создания проекта "AwesomeProject" используйте командную строку React Native, затем выполните `react-native run-android` в созданной папке.
 
 ```
 react-native init AwesomeProject
@@ -218,40 +212,39 @@ cd AwesomeProject
 react-native run-android
 ```
 
-If everything is set up correctly, you should see your new app running in your Android emulator shortly.
+Если все было сделано верно, вы должны в скором времени увидеть ваше приложение в эмуляторе Android.
 
-> A common issue is that the packager is not started automatically when you run
-`react-native run-android`. You can start it manually using `react-native start`.
+> Иногда случается так что упаковщик не запускается автоматически при выполнении
+`react-native run-android`. В этом случае вы можете запустить его вручную: `react-native start`.
 
 <block class="windows android" />
 
-> If you hit a `ERROR  Watcher took too long to load` on Windows, try increasing the timeout in [this file](https://github.com/facebook/react-native/blob/5fa33f3d07f8595a188f6fe04d6168a6ede1e721/packager/react-packager/src/DependencyResolver/FileWatcher/index.js#L16) (under your `node_modules/react-native/`).
+> Если, работая в ОС Windows, вы видите ошибку `ERROR  Watcher took too long to load` попробуйте увеличить значение timeout в [этом файле](https://github.com/facebook/react-native/blob/5fa33f3d07f8595a188f6fe04d6168a6ede1e721/packager/react-packager/src/DependencyResolver/FileWatcher/index.js#L16) (он находится в папке `node_modules/react-native/` вашего проекта).
 
 <block class="windows linux android" />
 
-### Modifying your app
+### Внесение изменений в код вашего мобильного приложения
 
-Now that you have successfully run the app, let's modify it.
+После того как вы смогли запустить мобильное приложение, можно попробовать внести изменения в его код.
 
-- Open `index.android.js` in your text editor of choice and edit some lines.
-- Press the `R` key twice or select `Reload` from the Developer Menu to see your change!
+- Откройте файл `index.android.js` в текстовом редакторе и измените что-нибудь в нем.
+- Дважды нажмите клавишу `R` или выберите `Reload` в Меню Разработчика (Developer Menu) чтобы увидеть изменения на экране эмулятора!
 
-### That's it!
+### Готово!
 
-Congratulations! You've successfully run and modified a React Native app.
+Поздравляем! Вы успешно запустили и изменили мобильное приложение React Native.
 
 <center><img src="img/react-native-congratulations.png" width="150"></img></center>
 
 <block class="mac windows linux ios android" />
 
-## Now What?
+## Что дальше?
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](docs/integration-with-existing-apps.html).
+- Если вы хотите добавить код React Native к существующему приложению, изучите [руководство по интеграции](docs/integration-with-existing-apps.html).
 
-- If you can't get this to work, see the [Troubleshooting](docs/troubleshooting.html#content) page.
+- Если у вас возникли сложности, вы можете найти ответ в разделе [решения проблем](docs/troubleshooting.html#content).
 
-- If you're curious to learn more about React Native, continue on
-to the [Tutorial](docs/tutorial.html).
+- Если вы хотите узнать больше про React Native, переходите к [уроку](docs/tutorial.html).
 
 <script>
 // Convert <div>...<span><block /></span>...</div>

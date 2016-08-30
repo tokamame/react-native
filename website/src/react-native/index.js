@@ -19,12 +19,12 @@ var index = React.createClass({
           <div className="wrap">
             <div className="text"><strong>React Native</strong></div>
             <div className="minitext">
-              Learn once, write anywhere: Build mobile apps with React
+                Изучи один раз, пиши везде: создание мобильных приложений на React
             </div>
           </div>
 
           <div className="buttons-unit">
-            <a href="docs/getting-started.html#content" className="button">Get started with React Native</a>
+            <a href="docs/getting-started.html#content" className="button">Знакомство с React Native</a>
           </div>
         </div>
 
@@ -34,7 +34,7 @@ var index = React.createClass({
 
           <h2>Создавайте полноценные мобильные приложения, используя JavaScript и React</h2>
           <p>
-            React Native lets you build mobile apps using only JavaScript. It uses the same design as React, letting you compose a rich mobile UI from declarative components.
+              React Native позволяет вам создавать мобильные приложения, используя только JavaScript. Он использует тот же самый дизайн что и React, позволяя вам создавать насыщенные мобильные UI из декларативных компонентов.
           </p>
 
           <Prism>
@@ -59,9 +59,9 @@ class WhyReactNativeIsSoGreat extends Component {
 }`}
           </Prism>
 
-          <h2>A React Native App is a Real Mobile App</h2>
+          <h2>Приложение React Native - полноценное мобильное приложение</h2>
           <p>
-            With React Native, you don't build a “mobile web app”, an “HTML5 app”, or a “hybrid app”. You build a real mobile app that's indistinguishable from an app built using Objective-C or Java. React Native uses the same fundamental UI building blocks as regular iOS and Android apps. You just put those building blocks together using JavaScript and React.
+              С React Native Вы не создаете “мобильное веб-приложение”, “приложение HTML5” или “гибридное приложение”. Вы создаете реальное мобильное приложение, которое неотличимо от приложения, созданного с использованием Objective C или Java. React Native использует те же самые фундаментальные стандартные блоки UI в что и  обычные приложения iOS и Android. Вы просто размещаете эти стандартные блоки, используя JavaScript и React.
           </p>
 
           <Prism>
@@ -89,16 +89,16 @@ class AwkwardScrollingImageWithText extends Component {
 }`}
           </Prism>
 
-          <h2>Don't Waste Time Recompiling</h2>
+          <h2>Не тратьте понапрасну время на перекомпиляцию</h2>
           <p>
-            React Native lets you build your app faster. Instead of recompiling, you can reload your app instantly. With hot reloading, you can even run new code while retaining your application state. Give it a try - it's a magical experience.
+              React Native позволяет вам создавать свои приложения быстрее. Вместо перекомпиляции можно немедленно перезагрузить свое приложение. Используя горячую перезагрузку, можно запустить даже новый код с сохранением состояния вашего приложения. Попробуйте, это просто волшебный опыт!
           </p>
           <br />
           <img src='https://media.giphy.com/media/13WZniThXy0hSE/giphy.gif' />
 
-          <h2>Use Native Code When You Need To</h2>
+          <h2>Используйте нативнй код когда это нужно</h2>
           <p>
-            React Native combines smoothly with components written in Objective-C, Java, or Swift. It's simple to drop down to native code if you need to optimize a few aspects of your application. It's also easy to build part of your app in React Native, and part of your app using native code directly - that's how the Facebook app works.
+              React Native без сложностей объединяется с компонентами, написанными на Objective C, Java или Swift. Если вам нужно оптимизировать какие-то из аспектов своего приложения, то добавить нативный код очень просто. Также легко вы можете создать часть приложения на React Native, а часть - используя непосредственно  нативный код, так как работает  приложение Facebook.
           </p>
 
           <Prism>
@@ -123,7 +123,7 @@ class SomethingFast extends Component {
           </div>
           <section className="home-bottom-section">
             <div className="buttons-unit">
-              <a href="docs/getting-started.html#content" className="button">Get started with React Native</a>
+              <a href="docs/getting-started.html#content" className="button">Знакомство с React Native</a>
             </div>
           </section>
         </section>

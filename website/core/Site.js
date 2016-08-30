@@ -21,9 +21,9 @@ var Site = React.createClass({
     var basePath = '/react-native/' + (path ? path + '/' : '');
     var title = this.props.title ? this.props.title + ' – ' : '';
     var currentYear = (new Date()).getFullYear();
-    title += 'React Native | A framework for building native apps using React';
-    var description = this.props.description ? this.props.description : 'A framework for building native apps using React';
-    var shareURL = 'https://facebook.github.io/react-native/';
+    title += 'React Native на русском | Фреймворк для разработки нативных приложений на React';
+    var description = this.props.description ? this.props.description : 'Фреймворк для разработки нативных приложений на React';
+    var shareURL = 'https://github.com/egeshi/react-native/';
     shareURL += this.props.path ? this.props.path : 'index.html';
 
     return (
@@ -38,6 +38,7 @@ var Site = React.createClass({
           <meta property="og:url" content={shareURL} />
           <meta property="og:image" content="http://facebook.github.io/react-native/img/opengraph.png?2" />
           <meta property="og:description" content={description} />
+          <meta name="description" content={title} />
 
           <base href={basePath} />
 
@@ -50,7 +51,6 @@ var Site = React.createClass({
           <script type="text/javascript">{'try{Typekit.load();}catch(e){}'}</script>
         </head>
         <body>
-          <script dangerouslySetInnerHTML={{__html: `window.fbAsyncInit = function() {FB.init({appId:'1677033832619985',xfbml:true,version:'v2.7'});};(function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) {return;}js = d.createElement(s); js.id = id;js.src = '//connect.facebook.net/en_US/sdk.js';fjs.parentNode.insertBefore(js, fjs);}(document, 'script','facebook-jssdk'));`}} />
           <script dangerouslySetInnerHTML={{__html: `window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, "script", "twitter-wjs"));`}} />
           <div className="container">
             <div className="nav-main">
@@ -69,7 +69,14 @@ var Site = React.createClass({
             {this.props.children}
 
             <footer className="wrap">
-              <div className="center">© {currentYear} Facebook Inc.</div>
+              <div className="center">
+                <a className="twitter-timeline" href="https://twitter.com/search?q=react%20native" data-widget-id="759895038889332736">Твиты о react native</a>
+              </div>
+              <div className="center" dangerouslySetInnerHTML={{__html: 'Translation &copy; 2016 <a href="https://ua.linkedin.com/in/egeshi">Antony Repin</a>'}} />
+              <div className="center">
+                <a href="https://twitter.com/egeshi" className="twitter-follow-button" data-show-count="false">Follow @egeshi</a>
+                <script async src="//platform.twitter.com/widgets.js" charSet="utf-8"></script></div>
+              <div className="center">Code samples, custom components and original English texts are courtesy of Facebook Inc.</div>
             </footer>
           </div>
 
@@ -79,21 +86,64 @@ var Site = React.createClass({
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-            ga('create', 'UA-41298772-2', 'facebook.github.io');
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-81752712-1', 'auto');
             ga('send', 'pageview');
 
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)
-            ){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+            window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function(f) {
+              t._e.push(f);
+            };
+
+            return t;
+          }(document, "script", "twitter-wjs"));
+
+
+            (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+              try {
+                w.yaCounter38813025 = new Ya.Metrika({
+                  id:38813025,
+                  clickmap:true,
+                  trackLinks:true,
+                  accurateTrackBounce:true,
+                  webvisor:true
+                });
+              } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+              d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+          })(document, window, "yandex_metrika_callbacks");
+
 
             docsearch({
-              apiKey: '2c98749b4a1e588efec53b2acec13025',
-              indexName: 'react-native-versions',
+              apiKey: '18ab1b339ae4030cb2947cb0c4d2fa80',
+              indexName: 'reactnative',
               inputSelector: '#algolia-doc-search',
               algoliaOptions: { facetFilters: [ "tags:${algoliaVersion}" ], hitsPerPage: 5 }
             });
           `}} />
+          <noscript dangerouslySetInnerHTML={{__html: '<div><img src="https://mc.yandex.ru/watch/38813025" style="position:absolute; left:-9999px;" alt="" /></div> '}} />
           <script src="js/scripts.js" />
         </body>
       </html>

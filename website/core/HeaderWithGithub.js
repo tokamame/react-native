@@ -36,7 +36,7 @@ var HeaderWithGithub = React.createClass({
               <a
                 target="_blank"
                 href={getGitHubPath(this.props.path)}>
-                Edit on GitHub
+                Редактировать на GitHub
               </a>
             </td>
           </tr>

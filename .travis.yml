@@ -34,6 +34,6 @@ branches:
 notifications:
   email:
     recipients:
-      - bestander@gmail.com
+      - lehcode@gmail.com
     on_failure: change
     on_success: change

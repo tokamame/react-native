@@ -1,21 +1,20 @@
 ---
 id: tutorial
-title: Tutorial
+title: Первый урок
 layout: docs
-category: The Basics
+category: Основы
 permalink: docs/tutorial.html
 next: props
 previous: getting-started
 ---
 
-React Native is like React, but it uses native components instead of web components as building blocks. So to understand the basic structure of a React Native app, you need to understand some of the basic React concepts, like JSX, components, `state`, and `props`. If you already know React, you still need to learn some React-Native-specific stuff, like the native components. This
-tutorial is aimed at all audiences, whether you have React experience or not.
+React Native похож на React но вместо веб-компонентов использует нативные компоненты в роли стандартных блоков. Поэтому, чтобы понять базовую структуру приложения React Native, вам нужно знать некоторые из основных понятий React, такие как JSX, компоненты (Components), состояние (`state`), and свойства (`props`). Если вы уже знакомы с React, вам все же понадобится изучить некоторые вещи, специфичные для React-Native, например родные компоненты. Этот урок предназначен для самой широкой аудитории, вне зависимости от того есть ли у вас опыт работы с React или нет.
 
-Let's do this thing.
+Сделаем это!
 
 ## Hello World
 
-In accordance with the ancient traditions of our people, we must first build an app that does nothing except say "Hello world". Here it is:
+В соответствии с древней традицией, нам сначала нужно создать простейшее приложение, которое не делает ничего кроме как говорит "Hello world". Вот его код:
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
@@ -32,23 +31,22 @@ class HelloWorldApp extends Component {
 AppRegistry.registerComponent('HelloWorldApp', () => HelloWorldApp);
 ```
 
-If you are feeling curious, you can play around with sample code directly in the web simulators. You can also paste it into your `index.ios.js` or `index.android.js` file to create a real app on your local machine.
+Если вам любопытно, вы можете поиграть с кодом непосредственно в веб-симуляторах. Чтобы создать реальное приложение на вашей локальной машине, вы можете вставить код в файл `index.ios.js` или `index.android.js`.
 
-## What's going on here?
+## Что здесь происходит?
 
-Some of the things in here might not look like JavaScript to you. Don't panic. This is the future.
+Кое-какой код, который вы увидите, может показаться непохожим на привычный JavaScript. Без паники! Просто это будущее.
 
-First of all, ES2015 (also known as ES6) is a set of improvements to JavaScript that is now part of the official standard, but not yet supported by all browsers, so often it isn't used yet in web development. React Native ships with ES2015 support, so you can use this stuff without worrying about compatibility. `import`, `from`, `class`, `extends`, and the `() =>` syntax in the example above are all ES2015 features. If you aren't familiar with ES2015, you can probably pick it up just by reading through sample code like this tutorial has. If you want, [this page](https://babeljs.io/docs/learn-es2015/) has a good overview of ES2015 features.
+Прежде всего, ES2015 (также известный как ES6) привнес ряд улучшений JavaScript и теперь является частью официального стандарта, однако все еще поддерживаемый не всеми браузерами, поэтому еще не очень часто используется в веб-разработке.  React Native поставляется с поддержкой ES2015 и таким образом, его можно использовать, не беспокоясь о совместимости. `import`, `from`, `class`, `extends`, и синтаксис `() =>` в приведенном выше примере, это функции ES2015. Если вы еще не знакомы с ES2015, его можно понять, на примерах кода как в этом уроке. Если нужно, то на [этой странице](https://babeljs.io/docs/learn-es2015/) вы найдете хороший обзор функций ES2015.
 
-The other unusual thing in this code example is `<Text>Hello world!</Text>`. This is JSX - a syntax for embedding XML within JavaScript. Many frameworks use a special templating language which lets you embed code inside markup language. In React, this is reversed. JSX lets you write your markup language inside code. It looks like HTML on the web, except instead of web things like `<div>` or `<span>`, you use React components. In this case, `<Text>`
-is a built-in component that just displays some text.
+Другая непривычная деталь в этом примере кода: `<Text>Hello world!</Text>`. Это JSX, синтаксис для встраивания XML в JavaScript. Многие платформы используют специальный язык обработки шаблонов, который позволяет встраивать код в язык разметки. В React эта концепция работает с точностью до наоборот. JSX позволяет вам писать свой язык разметки страницы в коде. Применение похоже на HTML, но вместо таких элементов страницы как напрмер `<div>` или `<span>`, вы используете компоненты React.  В данном случае  `<Text>` представляет собой встроенный компонент, который выводит на экран указанный внутри тега текст.
 
-## Component and AppRegistry
+## Компонент и AppRegistry
 
-So this code is defining `HelloWorldApp`, a new `Component`, and it's registering it with the `AppRegistry`. When you're building a React Native app, you'll be making new components a lot. Anything you see on the screen is some sort of component. A component can be pretty simple - the only thing that's required is a `render` function which returns some JSX to render.
+Код в примере определяет `HelloWorldApp`, как новый `Component`, и регистрирует его в `AppRegistry`. При создании приложений React Native вам понадобится больше компонентов. Все, что вы видите на экране, является своего рода компонентом. Компонент может быть довольно простым. Единственное что необходимо, функция `render`, которая возвращает некоторый JSX для создания визуального представления элемента.
 
-The `AppRegistry` just tells React Native which component is the root one for the whole application. You won't be thinking about `AppRegistry` a lot - there will probably just be one call to `AppRegistry.registerComponent` in your whole app. It's included in these examples so you can paste the whole thing into your `index.ios.js` or `index.android.js` file and get it running.
+`AppRegistry` просто указывает React Native какой компонент является корневым для всего приложения.  Вам не придется много задумываться об `AppRegistry`. Очень вероятно что вы использьете только один вызов `AppRegistry.registerComponent` для всего вашего приложения. Он включен в примеры таким образом чтобы можно было вставить код примера в ваш файл `index.ios.js` или `index.android.js` и запустить приложение.
 
-## This App Doesn't Do Very Much
+## Приложение почти ничего не делает
 
-Good point. To make components do more interesting things, you need to [learn about Props](/react-native/docs/props.html).
+Да-да. Чтобы сделать компонент с более широкой функциональностью, вам нужно узнать о Свойствах [Props](/docs/props.html).

@@ -12,7 +12,7 @@
 var React = require('React');
 
 function getGitHubPath(path) {
-  return 'https://github.com/facebook/react-native/blob/master/' + path;
+  return 'https://github.com/egeshi/react-native/blob/master/' + path;
 }
 
 var Footer = React.createClass({
