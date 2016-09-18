@@ -78,7 +78,7 @@ var DocsSidebar = React.createClass({
         {this.getCategories().map((category) =>
           <div className="nav-docs-section" key={category.name}>
             <h3>{category.name}</h3>
-            console.log(category.name);
+            {console.log(category.name)}
             <ul>
               {category.links.map((metadata) =>
                 <li key={metadata.id}>

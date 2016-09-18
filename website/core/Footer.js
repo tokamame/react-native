@@ -19,7 +19,7 @@ var Footer = React.createClass({
   render: function() {
     return (
       <p className="edit-page-block">
-        You can <a target="_blank" href={getGitHubPath(this.props.path)}>edit the content above on GitHub</a> and send us a pull request!
+        Вы можете <a target="_blank" href={getGitHubPath(this.props.path)}>отредактировать перевод на GitHub</a> и создать pull request!
       </p>
     );
   }
