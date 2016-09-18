@@ -2,16 +2,17 @@
 id: props
 title: Props
 layout: docs
-category: The Basics
+category: Основы
 permalink: docs/props.html
 next: state
 previous: tutorial
 ---
 
-Most components can be customized when they are created, with different parameters. These creation parameters are called `props`.
+Большинство компонентов может быть настроено при создании с помощью различных параметров. Эти параметры создания
+называют свойствами (`props`).
 
-For example, one basic React Native component is the `Image`. When you
-create an image, you can use a prop named `source` to control what image it shows.
+Например, один из основных компонентов React Native - `Image`. Когда вы создаете изображение, можно использовать
+свойство `source` для указания изображения, которое должен показывать компонент.
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
@@ -31,11 +32,12 @@ class Bananas extends Component {
 AppRegistry.registerComponent('Bananas', () => Bananas);
 ```
 
-Notice that `{pic}` is surrounded by braces, to embed the variable `pic` into JSX. You can put any JavaScript expression inside braces in JSX.
+Обратите внимание что для того чтобы встроить переменную `pic` в JSX, `{pic}` заключается в фигурные скобки. В JSX в
+фигурных скобках можно разместить любое выражение JavaScript.
 
-Your own components can also use `props`. This lets you make a single component
-that is used in many different places in your app, with slightly different
-properties in each place. Just refer to `this.props` in your `render` function. Here's an example:
+Создаваемые вами компоненты также могут использовать `props`. Эта особенность позволяет создать единственный компонент,
+который можно использовать в разных местах в вашем приложении, лишь изменив его свойства. Просто используйте
+`this.props` в функции `render` вашего компонента. Например:
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
@@ -64,10 +66,15 @@ class LotsOfGreetings extends Component {
 AppRegistry.registerComponent('LotsOfGreetings', () => LotsOfGreetings);
 ```
 
-Using `name` as a prop lets us customize the `Greeting` component, so we can reuse that component for each of our greetings. This example also uses the `Greeting` component in JSX, just like the built-in components. The power to do this is what makes React so cool - if you find yourself wishing that you had a different set of UI primitives to work with, you just invent new ones.
+Использование `name` как свойства позволяет нам настроить компонент `Greeting` таким образом, что мы можем снова
+использовать компонент для разных поздравлений. Этот пример использует компонент `Greeting` в JSX точно так же как
+встроенные компоненты. Такая возможность делает React настолько крутым. Если вам потребуется другой набор
+примитивов UI, просто создайте новые.
 
-The other new thing going on here is the [`View`](/react-native/docs/view.html) component. A [`View`](/react-native/docs/view.html) is useful
-as a container for other components, to help control style and layout.
+Другим нововведением является компонент [`View`](/react-native/docs/view.html). [`View`](/react-native/docs/view.html)
+используется как контейнер для других компонентов чтобы управлять их стилями и расположением.
 
-With `props` and the basic [`Text`](/react-native/docs/text.html), [`Image`](/react-native/docs/image.html), and [`View`](/react-native/docs/view.html) components, you can
-build a wide variety of static screens. To learn how to make your app change over time, you need to [learn about State](/react-native/docs/state.html).
+Используя свойства (`props`) и основные компоненты, такие как [`Text`](/react-native/docs/text.html),
+[`Image`](/react-native/docs/image.html) и [`View`](/react-native/docs/view.html) можно создать большое разнообразие
+статических экранов. Чтобы узнать как производить изменения в вашем приложении, нужно
+[узнать про State](/react-native/docs/state.html).
