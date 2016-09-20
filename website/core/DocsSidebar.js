@@ -76,8 +76,9 @@ var DocsSidebar = React.createClass({
         if (categoryName === 'Основы'){
             return <div className="nav-docs-section">
                 <h3>Поддержите переводчика</h3>
+                <p>Ребята, на сайте нет рекламы, я не работаю на Facebook и не имею спонсоров кроме вас ;) Не стесняйтесь! Сумму вы можете указать сами в поле формы ниже.<br/>Благодарю за вашу поддержку!</p>
                 <div>
-                    <iframe src="https://funding.webmoney.ru/widgets/vertical/15512811-ff28-45b6-ae5d-85b0a7ea9638?hc=1&hs=1&sum=10" width="240" height="190" scrolling="no" style={{border:'none'}}></iframe>
+                    <iframe src="https://funding.webmoney.ru/widgets/vertical/15512811-ff28-45b6-ae5d-85b0a7ea9638?hc=1&hs=1&sum=50" width="240" height="190" scrolling="no" style={{border:'none'}}></iframe>
                 </div>
             </div>
         }

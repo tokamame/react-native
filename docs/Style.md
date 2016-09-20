@@ -1,18 +1,18 @@
 ---
 id: style
-title: Style
+title: Стиль
 layout: docs
-category: The Basics
+category: Основы
 permalink: docs/style.html
 next: height-and-width
 previous: state
 ---
 
-With React Native, you don't use a special language or syntax for  defining styles. You just style your application using JavaScript. All of the core components accept a prop named `style`. The style names and values usually match how CSS works on the web, except names are written like `backgroundColor` instead of like `background-color`.
+При работе с React Native, для того чтобы определить стили, не нужно использовать специальный язык или синтаксис. Вы просто разрабатываете свое приложение, используя JavaScript. Все базовые компоненты имеют свойство под названием Стиль (`style`). Названия и значения стилей обычно соответствуют стилям CSS, за исключением ключей, которые в CSS пишутся через дефис, например, `backgroundColor` вместо `background-color`.
 
-The `style` prop can be a plain old JavaScript object. That's the simplest and what we usually use for example code. You can also pass an array of styles - the last style in the array has precedence, so you can use this to inherit styles.
+Свойство `style` обычно представляет собой объект JavaScript. В уроке мы используем их в таком виде в образцах кода для простоты. Однако можно передать и массив стилей. В этом случае последний стиль в массиве имеет приоритет, и таким образом можно использовать эту особенность для создания наследования стилей.
 
-As a component grows in complexity, it is often cleaner to use `StyleSheet.create` to define several styles in one place. Here's an example:
+Поскольку сложность компонентов обычно увеличивается, часто для указания нескольких стилей в одном месте, более чистым решением является использование `StyleSheet.create`. Например:
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
@@ -45,9 +45,8 @@ const styles = StyleSheet.create({
 AppRegistry.registerComponent('LotsOfStyles', () => LotsOfStyles);
 ```
 
-One common pattern is to make your component accept a `style` prop which in
-turn is used to style subcomponents. You can use this to make styles "cascade" the way they do in CSS.
+Один общий паттерн, это назначение вашему компоненту свойства style, которое, в свою очередь, может быть использовано при разработке субкомпонентов. Эту особенность можно использовать для того чтобы сделать стили "каскадируемыми", как это реализовано в CSS.
 
-There are a lot more ways to customize text style. Check out the [Text component reference](/react-native/docs/text.html) for a complete list.
+Есть немало других способов настроить стиль текста. Их полный список вы можете найти в [руководстве по компоненту Text](/react-native/docs/text.html).
 
-Now you can make your text beautiful. The next step in becoming a style master is to [learn how to control component size](/react-native/docs/height-and-width.html).
+Теперь вы знаете как украсить свой текст. Следующий шаг будущего мастера стилей это узнать [как управлять размерами компонента](/react-native/docs/height-and-width.html).

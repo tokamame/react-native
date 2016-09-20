@@ -1,18 +1,18 @@
 ---
 id: state
-title: State
+title: Состояние
 layout: docs
-category: The Basics
+category: Основы
 permalink: docs/state.html
 next: style
 previous: props
 ---
 
-There are two types of data that control a component: `props` and `state`. `props` are set by the parent and they are fixed throughout the lifetime of a component. For data that is going to change, we have to use `state`.
+Существуют два типа данных, управляющих компонентом: свойства `props` и состояние `state`. `props` устанавливаются родительским компонентом и явлются неизменными в течение всего жизненного цикла компонента. Для данных, которые могут меняться с течением времени, нужно использовать `state`.
 
-In general, you should initialize `state` in the constructor, and then call `setState` when you want to change it.
+Вообще, следует инициализировать `state` в конструкторе, а затем вызывать `setState` когда вам нужно его изменить.
 
-For example, let's say we want to make text that blinks all the time. The text itself gets set once when the blinking component gets created, so the text itself is a `prop`. The "whether the text is currently on or off" changes over time, so that should be kept in `state`.
+Например, предположим, что мы хотим создать мигающий текст. Сам текст указывается лишь однажды, во время создания компонента. Таким образом, сам текст является `prop`. Свойство текста "включен или выключен" со временем изменится, поэтому мы сохраняем его в `state`.
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
@@ -53,8 +53,8 @@ class BlinkApp extends Component {
 AppRegistry.registerComponent('BlinkApp', () => BlinkApp);
 ```
 
-In a real application, you probably won't be setting state with a timer. You might set state when you have new data arrive from the server, or from user input. You can also use a state container like [Redux](http://redux.js.org/index.html) to control your data flow. In that case you would use Redux to modify your state rather than calling `setState` directly.
+В реальном приложении вы, вероятно, не будете устанавливать состояние, используя таймер. Вероятнее вы будете менять состояние тогда, когда у вас есть новые данные, полученные с сервера или из ввода данных пользователем. Для управления потоком данных можно также использовать контейнер состояния, такой как [Redux](http://redux.js.org/index.html). В этом случае вместо непосредственного вызова `setState` для изменения состояния вы будете использовать Redux.
 
-State works the same way as it does in React, so for more details on handling state, you can look at the [React.Component API](https://facebook.github.io/react/docs/component-api.html).
+Состояние работает так же как в React. Поэтому чтобы узнать подробности обработки состояния, вам может понадобиться изучить [React.Component API](https://facebook.github.io/react/docs/component-api.html).
 
-At this point, you might be annoyed that most of our examples so far use boring default black text. To make things more beautiful, you will have to [learn about Style](/react-native/docs/style.html).
+К этому моменту вам наверное немного наскучило что большинство наших примеров используют обычный черный текст, каким он является по умолчанию. Поэтому чтобы сделать ваше первое приложение более красивыми, необходимо [узнать о стиле](/react-native/docs/style.html).

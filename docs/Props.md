@@ -1,6 +1,6 @@
 ---
 id: props
-title: Props
+title: Свойства
 layout: docs
 category: Основы
 permalink: docs/props.html
