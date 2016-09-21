@@ -1,22 +1,22 @@
 ---
 id: flexbox
-title: Layout with Flexbox
+title: Разметка Flexbox
 layout: docs
-category: The Basics
+category: Основы
 permalink: docs/flexbox.html
 next: handling-text-input
 previous: height-and-width
 ---
 
-A component can specify the layout of its children using the flexbox algorithm. Flexbox is designed to provide a consistent layout on different screen sizes.
+Компонент позволяет указать разметку своих дочерних элементов, используя алгоритм . Flexbox разработан для того чтобы обеспечить непротиворечивую разметку для различных размеров экрана.
 
-You will normally use a combination of `flexDirection`, `alignItems`, and `justifyContent` to achieve the right layout.
+В основном для создания правильной разметки страницы вы будете использовать комбинацию `flexDirection`, `alignItems`, и `justifyContent`.
 
-> Flexbox works the same way in React Native as it does in CSS on the web, with a few exceptions. The defaults are different, with `flexDirection` defaulting to `column` instead of `row`, and `alignItems` defaulting to `stretch` instead of `flex-start`, and the `flex` parameter only supports a single number.
+> Flexbox в React Native работает согласно тем же принципам что и CSS на веб-страницах, но с некоторыми исключениями. При использовании `flexDirection` применяются другие значения по умолчанию. Так, вместо строки `row` используется колонка `column`; значением по умолчанию для `alignItems` вместо `flex-start` является `stretch`, а параметр `flex` поддерживает только целые числа.
 
-#### Flex Direction
+#### Направление Flex
 
-Adding `flexDirection` to a component's `style` determines the **primary axis** of its layout. Should the children be organized horizontally (`row`) or vertically (`column`)? The default is `column`.
+Использование `flexDirection` в стиле (`style`) компонента определяет основную ось (**primary axis**) его разметки. Как должны быть расположены дочерние элементы? Горизонтально (`row`) или вертикально (`column`)? Значение по умолчанию - `column`.
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
@@ -38,9 +38,9 @@ class FlexDirectionBasics extends Component {
 AppRegistry.registerComponent('AwesomeProject', () => FlexDirectionBasics);
 ```
 
-#### Justify Content
+#### Распределение элементов
 
-Adding `justifyContent` to a component's style determines the **distribution** of children along the **primary axis**. Should children be distributed at the start, the center, the end, or spaced evenly? Available options are `flex-start`, `center`, `flex-end`, `space-around`, and `space-between`.
+Указание `justifyContent` в стиле компонента определяет распределение (**distribution**) дочерних элементов вдоль главной оси (**primary axis**). Как должны быть распределены дочерние элементы? В начале, центре, конце или расположены через равномерные интервалы? Возможные варианты: `flex-start`, `center`, `flex-end`, `space-around`, и `space-between`.
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
@@ -67,11 +67,11 @@ class JustifyContentBasics extends Component {
 AppRegistry.registerComponent('AwesomeProject', () => JustifyContentBasics);
 ```
 
-#### Align Items
+#### Выравнивание элементов
 
-Adding `alignItems` to a component's style determines the **alignment** of children along the **secondary axis** (if the primary axis is `row`, then the secondary is `column`, and vice versa). Should children be aligned at the start, the center, the end, or stretched to fill? Available options are `flex-start`, `center`, `flex-end`, and `stretch`.
+Указание `alignItems` в стиле компонента определяет выравнивание (**alignment**) дочерних элементов вдоль вторичной оси (**secondary axis**) (если главная ось - строка  `row`, то вторичная - колонка `column`, и наоборот). Дочерние элементы должны быть выравнены по левой стороне, центру, правой стороне, или распределены для заполнения всего свободного пространства? Доступные параметры: `flex-start`, `center`, `flex-end`, и `stretch`.
 
-> For `stretch` to have an effect, children must not have a fixed dimension along the secondary axis. In the following example, setting `alignItems: stretch` does nothing until the `width: 50` is removed from the children.
+> Чтобы использовать `stretch`, у дочерних элементов не должно быть фиксированного размера вдоль вторичной оси. Например, `alignItems: stretch` не применяется, пока для дочерних элементов используется свойство `width: 50`.
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
@@ -100,8 +100,8 @@ class AlignItemsBasics extends Component {
 AppRegistry.registerComponent('AwesomeProject', () => AlignItemsBasics);
 ```
 
-#### Going Deeper
+#### Подробнее
 
-We've covered the basics, but there are many other styles you may need for layouts. The full list of props that control layout is documented [here](./docs/layout-props.html).
+Мы изучили основы работы со стилями, но есть много других стилей, которые вероятно понадобятся вам для разметки. Полный список свойств, управляющих разметкой компонентов вы можете найти [на этой странице](/react-native/docs/layout-props.html).
 
-We're getting close to being able to build a real application. One thing we are still missing is a way to take user input, so let's move on to [learn how to handle text input with the TextInput component](/react-native/docs/handling-text-input.html).
+Мы вплотную подошли к тому чтобы создать первое рабочее приложение. Одна важная деталь, которую мы еще не изучили, это способ получать введенные пользователем данные, так что давайте двигаться дальше чтобы узнать [как обработать ввод текста с помощью компонента TextInput.](/react-native/docs/handling-text-input.html).

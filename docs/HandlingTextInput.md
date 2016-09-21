@@ -1,18 +1,16 @@
 ---
 id: handling-text-input
-title: Handling Text Input
+title: Ввод текста
 layout: docs
-category: The Basics
+category: Основы
 permalink: docs/handling-text-input.html
 next: using-a-scrollview
 previous: flexbox
 ---
 
-[`TextInput`](/react-native/docs/textinput.html#content) is a basic component that allows the user to enter text. It has an `onChangeText` prop that takes
-a function to be called every time the text changed, and an `onSubmitEditing` prop that takes a function to be called when the text is submitted.
+[`TextInput`](/react-native/docs/textinput.html#content) это базовый компонент, который позволяет пользователю вводить текст. У этого компонента есть свойство `onChangeText` которое при каждом изменении текста вызывает функцию, а также свойство `onSubmitEditing` , которое вызывает функцию при отправке текста пользователем.
 
-For example, let's say that as the user types, you're translating their words  into a different language. In this new language, every single word is written the same way: 🍕. So the sentence "Hello there Bob" would be translated
-as "🍕🍕🍕".
+Например, вы можете переводить текст, введенный пользователем, на другой язык. На этом другом языке каждое отдельное слово пишется как: 🍕. Так, предложение "Как дела, Вася?" может быть преобразовано в форму "🍕🍕🍕".
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
@@ -43,8 +41,8 @@ class PizzaTranslator extends Component {
 AppRegistry.registerComponent('PizzaTranslator', () => PizzaTranslator);
 ```
 
-In this example, we store `text` in the state, because it changes over time.
+В этом примере мы сохранили `text` в `state`, потому что он изменяется с течением времени.
 
-There are a lot more things you might want to do with a text input. For example, you could validate the text inside while the user types. For more detailed examples, see the [React docs on controlled components](https://facebook.github.io/react/docs/forms.html), or the [reference docs for TextInput](/react-native/docs/textinput.html).
+Существует множество других операций, которые вам может потребоваться провести над введенным текстом. Например, вы можете произвести внутреннюю валидацию текста во время его ввода пользователем. Для более подробных примеров изучите [документацию React о контролируемых компонентах](https://facebook.github.io/react/docs/forms.html) или [документацию по компоненту TextInput](/react-native/docs/textinput.html).
 
-Text input is probably the simplest example of a component whose state naturally changes over time. Next, let's look at another type of component like this is one that controls layout, and [learn about the ScrollView](/react-native/docs/using-a-scrollview.html).
+Компонент `TextInput` вероятно самый простой пример компонента, состояние которого естественным образом изменяется с течением времени. Теперь давайте обратим внимание на другой тип компонента, управляющего разметкой. В следующем уроке вы сможете [изучить компонент ScrollView](/react-native/docs/using-a-scrollview.html).

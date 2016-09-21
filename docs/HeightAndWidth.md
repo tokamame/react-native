@@ -1,18 +1,18 @@
 ---
 id: height-and-width
-title: Height and Width
+title: Высота и ширина
 layout: docs
-category: The Basics
+category: Основы
 permalink: docs/height-and-width.html
 next: flexbox
 previous: style
 ---
 
-A component's height and width determine its size on the screen.
+Высота и ширина компонента определяют его размер на экране.
 
-#### Fixed Dimensions
+#### Фиксированные размеры
 
-The simplest way to set the dimensions of a component is by adding a fixed `width` and `height` to style. All dimensions in React Native are unitless, and represent density-independent pixels.
+Самый простой способ установить размеры компонента это добавить к стилю фиксированные ширину (`width`) и высоту (`height`). Все размеры в React Native представляют собой независимые от разрешения пиксели.
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
@@ -33,13 +33,13 @@ class FixedDimensionsBasics extends Component {
 AppRegistry.registerComponent('AwesomeProject', () => FixedDimensionsBasics);
 ```
 
-Setting dimensions this way is common for components that should always render at exactly the same size, regardless of screen dimensions.
+Установка размеров таким способом характерна для компонентов, которые всегда должны отображаться с использованием точных размеров независимо от размеров экрана.
 
-#### Flex Dimensions
+#### Размеры с использованием Flex
 
-Use `flex` in a component's style to have the component expand and shrink dynamically based on available space. Normally you will use `flex: 1`, which tells a component to fill all available space, shared evenly amongst each other component with the same parent. The larger the `flex` given, the higher the ratio of space a component will take compared to its siblings.
+Для того чтобы создать компонент, который будет изменять размеры, основываясь на наличии свободного места на экране, используйте в стиле компонента свойство `flex`. Обычно вы будете использовать `flex: 1`, Компонент с таким свойством будет стремиться заполнить все свободное место по ширине экрана, равномерно распределяя компоненты в границах родительского компонента. Чем больше значение `flex`, тем больше пространства компонент займет относительно соседей.
 
-> A component can only expand to fill available space if its parent has dimensions greater than 0. If a parent does not have either a fixed `width` and `height` or `flex`, the parent will have dimensions of 0 and the `flex` children will not be visible.
+> Компонент сможет занимать всю ширину, заполняя все свободное место, только если у его родителя размер больше 0. Если родительский элемент не будет иметь фиксированной ширины (`width`) и высоты (`height`) или `flex`, то у родителя будут размеры 0, и дочерние элементы `flex` не будут видны.
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
@@ -63,4 +63,4 @@ class FlexDimensionsBasics extends Component {
 AppRegistry.registerComponent('AwesomeProject', () => FlexDimensionsBasics);
 ```
 
-After you can control a component's size, the next step is to [learn how to lay it out on the screen](/react-native/docs/flexbox.html).
+Теперь вы знаете как контролировать размеры компонента. На следующем шаге вы [узнаете как расположить компонент на экране](/react-native/docs/flexbox.html).

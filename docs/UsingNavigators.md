@@ -1,30 +1,30 @@
 ---
 id: using-navigators
-title: Using Navigators
+title: Навигаторы
 layout: docs
-category: The Basics
+category: Основы
 permalink: docs/using-navigators.html
 next: more-resources
 previous: networking
 ---
 
-Mobile apps rarely consist of just one screen. As soon as you add a second screen to your app, you will have to take into consideration how the user will navigate from one screen to the other.
+Мобильные приложения редко состоят из единственного экрана. Поэтому, когда вы добавляете второй экран к своему приложению, необходимо учесть как пользователь будет переходить с одного экрана на другой.
 
-You can use navigators to transition between multiple screens. These transitions can be typical side-to-side animations down a master/detail stack, or vertical modal popups.
+Для переходов между разными экранами можно использовать навигаторы. Эти переходы могут представлять собой обычные анимации стека master/detail или вертикальные модальные попапы.
 
-## Navigator
+## Навигатор
 
-React Native has several built-in navigation components, but for your first app you will probably want to use `Navigator`. It provides a JavaScript implementation of a navigation stack, so it works on both iOS and Android and is easy to customize.
+У React Native есть несколько встроенных компонентов навигации, но для первого приложения вы, вероятно, захотите использовать `Navigator`. Он обеспечивает JavaScript-реализацию стека навигации, и поэтому работает под iOS и Android и достаточно прост в настройке.
 
 ![](img/NavigationStack-Navigator.gif)
 
-### Working with Scenes
+### Работа со сценами
 
-At this point you should feel comfortable rendering all sorts of components in your app, be it a simple `View` with `Text` inside, or a `ScrollView` with a list of `Image`s. Together, these components make up a scene (another word for screen) in your app.
+К этому моменты вы уверенно можете отобразить любые компоненты в вашем мобильном приложении, будь это простой `View`, содержащий `Text` или `ScrollView` со списком Изображений (`Image`). Вместе эти компоненты составляют сцену (синоним для экрана) в вашем мобильном приложении.
 
-A scene is nothing other than a React component that is typically rendered full screen. This is in contrast to a `Text`, an `Image`, or even a custom `SpinningBeachball` component that is meant to be rendered as part of a screen. You may have already used one without realizing it - the ["HelloWorldApp"](docs/tutorial.html), the ["FlexDirectionBasics"](docs/flexbox.html), and the ["ListViewBasics"](docs/using-a-listview.html) components covered earlier in the tutorial are all examples of scenes.
+Сцена это ничто иное как компонент React, который обычно занимает всю площадь экрана. Сцена отличается от компонента `Text` или `Image` или даже пользовательского компонента `SpinningBeachball`, которые отображаются как часть экрана. Верятно что вы уже использовали сцены, даже не зная этого: компоненты ["HelloWorldApp"](docs/tutorial.html), the ["FlexDirectionBasics"](docs/flexbox.html) и ["ListViewBasics"](docs/using-a-listview.html), описанные ранее в уроке, все являются примерами сцен.
 
-For simplicity's sake, let's define a simple scene that displays a bit of text. We will come back to this scene later as we add navigation to our app. Create a new file called "MyScene.js" with the following contents:
+Давайте создадим простую сцену, которая выводит на экран немного текста. Мы вернемся к ней позже, когда будем добавлять к нашему приложению навигацию. Создайте новый файл по имени "MyScene.js" со следующим содержимым:
 
 ```javascript
 import React, { Component } from 'react';
@@ -47,7 +47,7 @@ export default class MyScene extends Component {
 }
 ```
 
-Notice the `export default` in front of the component declaration. This will _export_ the component, and in turn allow other components to _import_ it later on, like so:
+Обратите внимание на декларацию `export default` перед объявлением компонента. Эта декларация _экспортирует_ компонент и позволит другим компонентам _импортировать_ его позже подобным образом::
 
 ```javascript
 import React, { Component } from 'react';
@@ -66,11 +66,11 @@ class YoDawgApp extends Component {
 AppRegistry.registerComponent('YoDawgApp', () => YoDawgApp);
 ```
 
-We now have a simple app that renders your scene and nothing else. In this case, `MyScene` is a simple example of a [reusable React component](https://facebook.github.io/react/docs/reusable-components.html).
+Теперь у нас теперь есть простое приложение, которое отображает вашу сцену и больше ничего. В этом случае `MyScene` - простой пример [допускающего повторное использование компонента React](https://facebook.github.io/react/docs/reusable-components.html).
 
-### Using Navigator
+### Navigator
 
-Enough about scenes, let's start navigating. We will start by rendering a `Navigator`, and then let the `Navigator` render the scene for you by passing in your own render function to its `renderScene` prop.
+Довольно о сценах, давайте настроим переходы между экранами. Мы начнем с отображения Навигатора (`Navigator`), а затем `Navigator` отобразит сцену, передавая вашу функцию `render()` своему свойству `renderScene`.
 
 ```javascript
 render() {
@@ -85,11 +85,11 @@ render() {
 }
 ```
 
-Something you will encounter a lot when dealing with navigation is the concept of routes. A route is an object that contains information about a scene. It is used to provide all the context that the navigator's `renderScene` function needs to render a scene. It can have any number of keys to help distinguish your scene, and I happened to pick a single `title` key for the above example.
+При работе c навигацией вы будете часто встречать такое понятие как "маршрут". Маршрут это объект, который содержит информацию о сцене. Он используется для того чтобы предоставить весь контекст, который необходим функции навигатора `renderScene` для отображения сцены. Маршрут может содержать любое количество ключей для того чтобы помочь различать вашу сцену, но для нашего примера мы используем единственный ключ - `title`.
 
-#### Pushing scenes onto the stack
+#### Добавление сцен в стек
 
-In order to transition to a new scene, you will need to learn about `push` and `pop`. These two methods are provided by the `navigator` object that is passed to your `renderScene` function above. They can be used, as you may have realized, to push and pop routes into your navigation stack.
+Чтобы перейти к новой сцене, вам нужно узнать про добавление (`push`) и получение (`pop`). Оба этих метода предоставляются компонентом навигатор (`Navigator`), который ранее был передан вашей функции `renderScene`. Как вы наверняка догадались, они нужны чтобы добавлять (`push`) в стек и получать (`pop`) маршруты из стека навигации.
 
 ```javascript
 navigator.push({
@@ -100,7 +100,7 @@ navigator.push({
 navigator.pop();
 ```
 
-A more complete example that demonstrates the pushing and popping of routes could therefore look something like this:
+Более полный пример, который демонстрирует добавление и получение маршрутов, может выглядеть примерно так:
 
 ```javascript
 import React, { Component, PropTypes } from 'react';
@@ -161,10 +161,10 @@ class MyScene extends Component {
 }
 ```
 
-In this example, the `MyScene` component is passed the title of the current route via the `title` prop. It displays two tappable components that call the `onForward` and `onBack` functions passed through its props, which in turn will call `navigator.push()` and `navigator.pop()` as needed.
+В этом примере компоненту `MyScene` передаются заголовок текущего маршрута через свойство `title`. Компонент выводит на экран два интерактивных компонента, которые вызывают функции `onForward` и `onBack` через собственные свойства, которые, в свою очередь, вызовут `navigator.push()` и `navigator.pop()`.
 
-Check out the [Navigator API reference](docs/navigator.html) for more `Navigator` code samples, or read through the [Navigation guide](docs/navigation.html) for other examples of what you can do with navigators.
+Если вы хотите увидеть больше примеров кода с использованием компонента `Navigator`, обратитесь к [докуменации по Navigator API](docs/navigator.html) или изучите [руководство по навигации](/react-native/docs/navigation.html) чтобы узнать как использовать весь функционал Навигатора.
 
-## High Five!
+## Дай пять!
 
-If you've gotten here by reading linearly through the tutorial, then you are a pretty impressive human being. Congratulations. Next, you might want to check out [all the cool stuff the community does with React Native](/react-native/docs/more-resources.html).
+Если вы добрались до этой строки с самого начала урока, то теперь вы довольно серьезный React Native кодер. Поздравляем! Теперь вы наверное захотите узнать больше из [интересных материалов, которые созданы сообществом для описания возможностей React Native](/react-native/docs/more-resources.html).

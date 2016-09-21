@@ -1,28 +1,28 @@
 ---
 id: network
-title: Networking
+title: Сетевые данные
 layout: docs
-category: The Basics
+category: Основы
 permalink: docs/network.html
 next: using-navigators
 previous: using-a-listview
 ---
 
-Many mobile apps need to load resources from a remote URL. You may want to make a POST request to a REST API, or you may simply need to fetch a chunk of static content from another server.
+Многие мобильные приложения загружают ресурсы с удаленных URL. Вам может понадобиться сделать POST-запрос к REST API, или вы, возможно, просто хотите получить блок статического контента с другого сервера.
 
-## Using Fetch
+## Использование Fetch
 
-React Native provides the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for your networking needs. Fetch will seem familiar if you have used `XMLHttpRequest` or other networking APIs before. You may refer to MDN's guide on [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) for additional information.
+React Native предоставляет для подобных потребностей [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) Fetch покажется более знакомым если вы прежде использовали `XMLHttpRequest` или другие сетевые API. Для дополнительной информации вы можете обратиться к руководству MDN по [использованию Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) for additional information.
 
-#### Making requests
+#### Создание запросов
 
-In order to fetch content from an arbitrary URL, just pass the URL to fetch:
+Чтобы получить контент с определенного URL, просто укажите адрес, с которого вы хотите получить данные:
 
 ```js
 fetch('https://mywebsite.com/mydata.json')
 ```
 
-Fetch also takes an optional second argument that allows you to customize the HTTP request. You may want to specify additional headers, or make a POST request:
+Fetch также получает второй дополнительный параметр, который позволяет настроить HTTP-запрос. Можно указать дополнительные заголовки или произвести POST-запрос:
 
 ```js
 fetch('https://mywebsite.com/endpoint/', {
@@ -38,13 +38,13 @@ fetch('https://mywebsite.com/endpoint/', {
 })
 ```
 
-Take a look at the [Fetch Request docs](https://developer.mozilla.org/en-US/docs/Web/API/Request) for a full list of properties.
+Для полного списка свойств обратитесь к [документации по Fetch Request](https://developer.mozilla.org/en-US/docs/Web/API/Request).
 
-#### Handling the response
+#### Обработка ответа сервера
 
-The above examples show how you can make a request. In many cases, you will want to do something with the response.
+Вышеуказанные примеры показывают как создать запрос. Во многих случаях вам потребуется сделать что-то с ответом.
 
-Networking is an inherently asynchronous operation. Fetch methods will return a  [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that make it straightforward to write code that works in an asynchronous manner:
+Работа с сетевыми данными по сути асинхронная операция. Методы Fetch возвратят [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), который позволяет непосредственно создавать код, работающий асинхронно:
 
   ```js
   function getMoviesFromApiAsync() {
@@ -59,7 +59,7 @@ Networking is an inherently asynchronous operation. Fetch methods will return a 
   }
   ```
 
-You can also use the proposed ES2017 `async`/`await` syntax in a React Native app:
+Также в приложении React Native можно использовать синтаксис ES7 `async`/`await`:
 
   ```js
   async function getMoviesFromApi() {
@@ -73,13 +73,13 @@ You can also use the proposed ES2017 `async`/`await` syntax in a React Native ap
   }
   ```
 
-Don't forget to catch any errors that may be thrown by `fetch`, otherwise they will be dropped silently.
+Не забывайте фиксировать любые ошибки, которые могут быть выданы `fetch`, иначе они будут тихо отброшены.
 
-> By default, iOS will block any request that's not encrypted using SSL. If you need to fetch from a cleartext URL (one that begins with `http`) you will first need to add an App Transport Security exception. If you know ahead of time what domains you will need access to, it is more secure to add exceptions just for those domains; if the domains are not known until runtime you can [disable ATS completely](/react-native/docs/integration-with-existing-apps.html#app-transport-security). [See Apple's documentation for more information](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW33).
+> По умолчанию iOS будет блокировать любой запрос, не использующий SSL. Если вам нужно получить данные с ресурса с использованием HTTP, вам сначала потребуется добавить исключение App Transport Security. Если вам заранее известно, к каким доменам вам необходим доступ, более безопасным будет добавить в список исключений только эти домены. Если домены заранее не известны, вы можете [полностью отключить ATS](/react-native/docs/integration-with-existing-apps.html#app-transport-security). Обратитесь к [документации Apple](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW33) для полного описания.
 
-### Using Other Networking Libraries
+### Использование других библиотек
 
-The [XMLHttpRequest API](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) is built in to React Native. This means that you can use third party libraries such as [frisbee](https://github.com/niftylettuce/frisbee) or [axios](https://github.com/mzabriskie/axios) that depend on it, or you can use the XMLHttpRequest API directly if you prefer.
+В React Native встроен [XMLHttpRequest API](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) Это означает что можно пользоваться сторонними библиотеками, такими как [frisbee](https://github.com/niftylettuce/frisbee) или [axios](https://github.com/mzabriskie/axios), которые зависят от XMLHttpRequest API, или, если вам удобнее, можно использовать непосредственно XMLHttpRequest API.
 
 ```js
 var request = new XMLHttpRequest();
@@ -99,11 +99,11 @@ request.open('GET', 'https://mywebsite.com/endpoint/');
 request.send();
 ```
 
-> The security model for XMLHttpRequest is different than on web as there is no concept of [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) in native apps.
+> Модель обеспечения безопасности для XMLHttpRequest отличается от используемой для web, поскольку в нативных приложениях остутствует концепция [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing).
 
-## WebSocket Support
+## Поддержка WebSocket
 
-React Native also supports [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket), a protocol which provides full-duplex communication channels over a single TCP connection.
+React Native предоставляет поддержку [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket), протокола, который обеспечивает полнодуплексные коммуникационные каналы по отдельному TCP-соединению
 
 ```js
 var ws = new WebSocket('ws://host.com/path');
@@ -130,4 +130,4 @@ ws.onclose = (e) => {
 };
 ```
 
-Your app can now display all sorts of data and you may soon need to organize this content into several screens. To manage the transition between these screens, you will need to learn about [navigators](/react-native/docs/using-navigators.html).
+Теперь ваше мобильное приложение может выводить на экран любые данные, и вам, вероятно, скоро понадобится организовать этот контент в виде несколько экранов. Чтобы управлять переходами между этими экранами, нужно узнать о [навигаторах](/react-native/docs/using-navigators.html).

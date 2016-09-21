@@ -1,22 +1,22 @@
 ---
 id: using-a-listview
-title: Using a ListView
+title: Использование ListView
 layout: docs
-category: The Basics
+category: Основы
 permalink: docs/using-a-listview.html
 next: network
 previous: using-a-scrollview
 ---
 
-The `ListView` component displays a vertically scrolling list of changing, but similarly structured, data.
+Компонент `ListView` выводит на экран список изменяемых, но подобным образом структурированных данных с возможностью вертикальной прокруткой.
 
-`ListView` works well for long lists of data, where the number of items might change over time. Unlike the more generic [`ScrollView`](/react-native/docs/using-a-scrollview.html), the `ListView` only renders elements that are currently showing on the screen, not all the elements at once.
+`ListView` лучше всего подходит для отображения длинных списков данных, в которых количество элементов может со временем измениться. В отличие от более универсального [`ScrollView`](/react-native/docs/using-a-scrollview.html), `ListView` отрисовывает только те элементы, которые в настоящий момент видны на экране, а не все сразу.
 
-The `ListView` component requires two props: `dataSource` and `renderRow`. `dataSource` is the source of information for the list. `renderRow` takes one item from the source and returns a formatted component to render.
+Компоненту `ListView` требуются два свойства: `dataSource` и `renderRow`. `dataSource` представляет собой источник данных для списка. `renderRow` получает из источника один элемент и возвращает отформатированный компонент для отображения на экране устройства.
 
-This example creates a simple `ListView` of hardcoded data. It first initializes the `dataSource` that will be used to populate the `ListView`. Each item in the `dataSource` is then rendered as a `Text` component. Finally it renders the `ListView` and all `Text` components.
+Образец кода, приведенный ниже, создает простой `ListView` из указанных в коде данных. Сначала он инициализирует `dataSource` который будет использоваться для заполнения `ListView`. Каждый элемент в `dataSource` затем отображается как компонент `Text`. После этого отображается `ListView` и все компоненты `Text`.
 
-> A `rowHasChanged` function is required to use `ListView`. Here we just say a row has changed if the row we are on is not the same as the previous row.
+> Для использования `ListView` необходимо наличие функции `rowHasChanged`. Здесь мы допускаем что строка изменилась, если текущая строка, на которой мы находимся, не является такой же как предыдущая строка.
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
@@ -49,4 +49,4 @@ class ListViewBasics extends Component {
 AppRegistry.registerComponent('ListViewBasics', () => ListViewBasics);
 ```
 
-One of the most common uses for a `ListView` is displaying data that you fetch from a server. To do that, you will need to [learn about networking in React Native](/react-native/docs/network.html).
+Один из наиболее частых способов использования `ListView` это вывод на экран данных, полученных от сервера. Чтобы получить их, вам нужно [узнать про работу с сетевыми данными в React Native](/react-native/docs/network.html).

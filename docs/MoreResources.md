@@ -1,49 +1,49 @@
 ---
 id: more-resources
-title: More Resources
+title: Другие ресурсы
 layout: docs
-category: The Basics
+category: Основы
 permalink: docs/more-resources.html
 next: integration-with-existing-apps
 previous: using-navigators
 ---
 
-If you just read through this website, you should be able to build a pretty cool React Native app. But React Native isn't just a product made by one company - it's a community of thousands of developers. So if you're interested in React Native, here's some related stuff you might want to check out.
+Если вы полностью изучили руководство, то теперь определнно в состоянии создать довольно крутое мобильное приложение на React Native. Но React Native это не только продукт, созданный отдельной компанией, это еще и сообщество, в котором принимаю участие тысячи разработчиков. Поэтому, если вы заинтересовались React Native, вот некоторые дополнительные материалы, которым вы верятно захотите уделить внимание.
 
-## Popular Libraries
+## Популярные библиотеки
 
-If you're using React Native, you probably already know about [React](https://facebook.github.io/react/). So I feel a bit silly mentioning this. But if you haven't, check out React - it's the best way to build a modern website.
+Если Вы используете React Native, то, вероятно, уже знаете про [React](https://facebook.github.io/react/). Упоминание React может показаться вам немного не в тему здесь, но если вы еще не изучали React, то знайте, что это лучший способ создать современный веб-сайт.
 
-One common question is how to handle the "state" of your React Native application. The most popular library for this is [Redux](http://redux.js.org/). Don't be afraid of how often Redux uses the word "reducer" - it's a pretty simple library, and there's also a nice [series of videos](https://egghead.io/courses/getting-started-with-redux) explaining it.
+Часто возникает вопрос о том как производить обработку "состояния" (`state`) вашего приложения React Native. Самая популярная библиотека для этого - [Redux](http://redux.js.org/). Не бойтесь что в Redux часто используется фраза "преобразователь данных" (reducer), это довольно простая библиотека, и есть хорошая [подборка видео](https://egghead.io/courses/getting-started-with-redux), полностью раскрывающих эту тему.
 
-If you're looking for a library that does a specific thing, check out [Awesome React Native](https://github.com/jondot/awesome-react-native), a curated list of components that also has demos, articles, and other stuff.
+Если вы ищете библиотеку, которая обладает каким-то определенным функционалом, поищите ее в [Awesome React Native](https://github.com/jondot/awesome-react-native). Это обновляемый список компонентов, к которым есть демо-примеры, статьи и другие обучающие материалы.
 
-## Example Apps
+## Примеры мобильных приложений
 
-There are a lot of example apps at the [React Native Playground](https://rnplay.org/apps/picks). You can see the code running on a real device, which is a neat feature.
+Много мобильных приложений, на которых можно поучиться, вы сможете найти в [React Native Playground](https://rnplay.org/apps/picks). Там вы сможете запустить свой код на реальном устройстве, что очень удобно.
 
-The folks who built the app for Facebook's F8 conference in 2016 also [open-sourced the code](https://github.com/fbsamples/f8app) and wrote up a [detailed series of tutorials](http://makeitopen.com/tutorials/building-the-f8-app/planning/). This is useful if you want a more in-depth example that's more realistic than most sample apps out there.
+Люди, которые создавали мобильное приложение для конференции Facebook F8 в 2016 году, также [сделали свой код открытым](https://github.com/fbsamples/f8app) и создали серию [подробных уроков](http://makeitopen.com/tutorials/building-the-f8-app/planning/). Они будут полезны, если вам нужны более сложные примеры. Эти мобильные приложения больше приближены к реальности чем большинство демонстрационных мобильных приложений.
 
-## Development Tools
+## Средства разработки
 
-[Nuclide](https://nuclide.io/) is the IDE that Facebook uses internally for React Native development. The killer feature of Nuclide is its debugging ability. It also has great inline Flow support.
+[Nuclide](https://nuclide.io/) - IDE, который используется в Facebook для разработки React Native. Убийственная фича Nuclide - возможность отладки. У этого IDE также есть хорошая встроенная поддержка Flow.
 
-[Ignite](https://github.com/infinitered/ignite) is a starter kit that uses Redux and a few different common UI libraries. It has a CLI to generate apps, components, and containers. If you like all of the individual tech choices, Ignite could be perfect for you.
+[Ignite](https://github.com/infinitered/ignite) - начальный набор, который использует Redux и некоторые широко используемые библиотеки UI. У него есть CLI для сборки мобильных приложений, компонентов и контейнеров. Ignite может подойти вам идеально.
 
-[CodePush](https://microsoft.github.io/code-push/) is a service from Microsoft that makes it easy to deploy live updates to your React Native app. If you don't like going through the app store process to deploy little tweaks, and you also don't like setting up your own backend, give CodePush a try.
+[CodePush](https://microsoft.github.io/code-push/) - сервис от Microsoft, который облегчает деплой живых обновлений вашего мобильного приложения React Native. Если вы не хотите каждый раз проходить через процессы утверждения app store при добавлении небольших изменений и тонкой натройки вашего мобильного приложения, и не хотите создавать свой собственный бэкэнд, попробуйте CodePush.
 
-[Exponent](http://docs.getexponent.com/versions/v6.0.0/index.html) is a development environment plus application that focuses on letting you build React Native apps in the Exponent development environment, without ever touching Xcode or Android Studio. If you wish React Native was even more JavaScripty and webby, check out Exponent.
+[Exponent](http://docs.getexponent.com/versions/v6.0.0/index.html) - среда разработки и приложение, функуционал которого сконцентрирован на том, чтобы предоставить вам возможность создавать мобильные приложения React Native, не используя Xcode или Android Studio. Если вам когда-либо желали чтобы React Native был более джаваскриптовым, попробуйте Exponent.
 
-[Deco](https://www.decosoftware.com/) is an all-in-one development environment specifically designed for React Native. It can automatically set up a new project, search for open source components, and insert them. You can also tweak your app graphically in real time. Check it out if you use macOS.
+[Deco](https://www.decosoftware.com/) - единая среда разработки, специально предназначенная для React Native. С ее помощью можно автоматически создать новый проект, найти компоненты с открытым исходным кодом, и добавить их в свое мобильное приложение. Также вы сможете настроить свое мобильное приложение в режиме реального времени с помощью графического интерфейса этого IDE. Обязательно попробуйте если вы работате под macOS.
 
-## Where React Native People Hang Out
+## Где найти людей React Native?
 
-The [React Native Community](https://www.facebook.com/groups/react.native.community) Facebook group has thousands of developers, and it's pretty active. Come there to show off your project, or ask how other people solved similar problems.
+В [Сообществе React Native в Facebook](https://www.facebook.com/groups/react.native.community) состоят тысячи разработчиков, и они ведут себя довольно активно. Заходите туда чтобы показать ваш проект или спросить, как другие разработчики решали проблемы с кодом, которые возникают у вас.
 
-[Reactiflux](https://discord.gg/0ZcbPKXt5bZjGY5n) is a Discord chat where a lot of React-related discussion happens, including React Native. Discord is just like Slack except it works better for open source projects with a zillion contributors. Check out the #react-native channel.
+[Reactiflux](https://discord.gg/0ZcbPKXt5bZjGY5n) - чат Discord, где происходит много обсуждений, связанных с React и React Native. Discord это тоже что и Slack, но более приспособлен для проектов с открытым исходным кодом, вклчюает в себя с огромное количество активных кодеров. Просто загляните на канал #react-native.
 
-The [React Twitter account](https://twitter.com/reactjs) covers both React and React Native. Following that account is a pretty good way to find out what's happening in the world of React.
+Аккаунт [React на Twitter](https://twitter.com/reactjs) содержит новости про React и React Native. Если его фолловить, то вы обретете неплохой источник новостей из мира React.
 
-There are a lot of [React Native Meetups](http://www.meetup.com/topics/react-native/) that happen around the world. Often there is React Native content in React meetups as well.
+Также по всему миру происходят [React Native Meetups](http://www.meetup.com/topics/react-native/).
 
-Sometimes we have React conferences. We posted the [videos from React.js Conf 2016](https://www.youtube.com/playlist?list=PLb0IAmt7-GS0M8Q95RIc2lOM6nc77q1IY), and we'll probably have more conferences in the future, too. Stay tuned.
+Иногда Facebook проводит конференции по React. Есть [видео с React.js Conf 2016](https://www.youtube.com/playlist?list=PLb0IAmt7-GS0M8Q95RIc2lOM6nc77q1IY) и, вероятно, будет больше конференций в будущем. Оставайтесь с нами!

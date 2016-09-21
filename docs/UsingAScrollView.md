@@ -1,16 +1,16 @@
 ---
 id: using-a-scrollview
-title: Using a ScrollView
+title: Использование ScrollView
 layout: docs
-category: The Basics
+category: Основы
 permalink: docs/using-a-scrollview.html
 next: using-a-listview
 previous: handling-text-input
 ---
 
-The [`ScrollView`](/react-native/docs/scrollview.html) is a generic scrolling container that can host multiple components and views. The scrollable items need not be homogenous, and you can scroll both vertically and horizontally (by setting the `horizontal` property).
+[`ScrollView`](/react-native/docs/scrollview.html) это универсальный контейнер с возможностью прокрутки, который может содержать в себе различные компоненты и представления. Элементы со скроллом не обязательно должны быть однородными, а представление можно прокрутить вертикально и горизонтально (указав свойство `horizontal`).
 
-This example creates a vertical `ScrollView` with both images and text mixed together.
+Данный пример создает вертикальный `ScrollView` с использованием изображений и текста.
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
@@ -62,4 +62,4 @@ AppRegistry.registerComponent(
   () => IScrolledDownAndWhatHappenedNextShockedMe);
 ```
 
-`ScrollView` works best to present a small amount of things of a limited size. All the elements and views of a `ScrollView` are rendered, even if they are not currently shown on the screen. If you have a long list of more items that can fit on the screen, you should use a `ListView` instead. So let's [learn about the ListView](/react-native/docs/using-a-listview.html) next.
+`ScrollView` в первую очередь предназначен для ого чтобы отобрасить небольшое количество элементов, имеющих конечный размер. Все элементы и представления `ScrollView` отрисовываются даже если не видны в настоящий момент на экране устройства. Если у вас есть относительно длинный список элементов, которые могут уместиться на экране, то вместо компонента `ScrollView` следует использовать `ListView`. Так что давайте теперь [узнаем что представляет собой ListView](/react-native/docs/using-a-listview.html).
