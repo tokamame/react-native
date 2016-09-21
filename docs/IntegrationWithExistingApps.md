@@ -1,8 +1,8 @@
 ---
 id: integration-with-existing-apps
-title: Integration With Existing Apps
+title: Интеграция с приложениями
 layout: docs
-category: Guides
+category: Руководства
 permalink: docs/integration-with-existing-apps.html
 next: colors
 previous: more-resources
@@ -38,95 +38,95 @@ block { display: none; }
 
 <block class="android" />
 
-> This section will be updated shortly showing an integration into a more real world application such as the 2048 app that was used for Objective-C and Swift.
+> Этот раздел будет вскоре обновлен чтобы показать интеграцию более приближенного к реальному приложения, такого как мобильное приложение 2048, которое использовалось для Objective-C и Swift.
 
 <block class="objc swift android" />
 
-## Key Concepts
+## Ключевые понятия
 
-React Native is great when you are starting a new mobile app from scratch. However, it also works well for adding a single view or user flow to existing native applications. With a few steps, you can add new React Native based features, screens, views, etc.
+React Native отлично поддходит для разработки новых мобильных приложений с нуля. Однако он также хорошо подходит для добавление нового представления или user flow к существующим нативным приложениям. За несколько шагов можно добавить новый функционал, разработанный на React Native, а также экраны, представления и т.д.
 
 <block class="objc swift" />
 
-The keys to integrating React Native components into your iOS application are to:
+Основные шаги для интеграции компонентов React Native в ваше приложение iOS:
 
-1. Understand what React Native components you want to integrate.
-2. Create a `Podfile` with `subspec`s for all the React Native components you will need for your integration.
-3. Create your actual React Native components in JavaScript.
-4. Add a new event handler that creates a `RCTRootView` that points to your React Native component and its `AppRegistry` name that you defined in `index.ios.js`.
-5. Start the React Native server and run your native application.
-6. Optionally add more React Native components.
-7. [Debug](/react-native/releases/next/docs/debugging.html).
-8. Prepare for [deployment](/react-native/docs/running-on-device-ios.html) (e.g., via the `react-native-xcode.sh` script).
-9. Deploy and Profit!
+1. Определитесь какие компоненты React Native вы хотите интегрировать.
+2. Создайте `Podfile`, содержащий `subspec` для всех компонентов React Native, которые потребуются вам для интеграции.
+3. Создайте свои компоненты React Native на JavaScript.
+4. Добавьте новый обработчик событий, который создаст `RCTRootView`, который указывает на ваш компонент React Native и его имя `AppRegistry`, которое вы указали в `index.ios.js`.
+5. Запустите сервер React Native и ваше нативное приложение.
+6. Если нужно, добавьте другие компоненты React Native.
+7. Исправьте все недочёты с помощью [отладки](/react-native/releases/next/docs/debugging.html).
+8. Подготовьте [деплой](/react-native/docs/running-on-device-ios.html) (например с помощью скрипта `react-native-xcode.sh`).
+9. Зарабатывайте!
 
 <block class="android" />
 
-The keys to integrating React Native components into your Android application are to:
+Основные шаги для интеграции компонентов React Native в ваше приложение Android:
 
-1. Understand what React Native components you want to integrate.
-2. Install `react-native` in your Android application root directory to create `node_modules/` directory.
-3. Create your actual React Native components in JavaScript.
-4. Add `com.facebook.react:react-native:+` and a `maven` pointing to the `react-native` binaries in `node_nodules/` to your `build.gradle` file.
-4. Create a custom React Native specific `Activity` that creates a `ReactRootView`.
-5. Start the React Native server and run your native application.
-6. Optionally add more React Native components.
-7. [Debug](/react-native/releases/next/docs/debugging.html).
-8. [Prepare](/react-native/releases/next/docs/signed-apk-android.html) for [deployment](/react-native/docs/running-on-device-android.html).
-9. Deploy and Profit!
+1. Определитесь какие компоненты React Native вы хотите интегрировать.
+2. Установите `react-native` в корневой каталог вашего приложения Android. Вы увидите каталог `node_modules/`.
+3. Создайте свои компоненты React Native на JavaScript.
+4. Добавьте `com.facebook.react:react-native:+` и `maven` в ваш файл `build.gradle` с указанием на двоичные файлы `react-native`, расположенные в директории `node_nodules/`.
+4. Создайте свою `Activity`, которая создает `ReactRootView`.
+5. Запустите сервер React Native и ваше нативное приложение.
+6. Если нужно, добавьте другие компоненты React Native.
+7. Исправьте все недочёты с помощью [отладки](/react-native/releases/next/docs/debugging.html).
+8. [Подготовьте](/react-native/releases/next/docs/signed-apk-android.html) [деплой](/react-native/docs/running-on-device-android.html).
+9. Зарабатывайте!
 
 <block class="objc swift android" />
 
-## Prerequisites
+## Зависимости
 
 <block class="android" />
 
-The [Android Getting Started guide](/react-native/docs/getting-started.html) will install the appropriate prerequisites (e.g., `npm`) for React Native on the Android target platform and your chosen development environment.
+Выполнив примеры из урока [Как начать с Android](/react-native/docs/getting-started.html) , вы установите соответствующие зависимости (например, `npm`) для React Native, платформы Android и вашей излюбленной среды разработки.
 
 <block class="objc swift" />
 
-### General
+### Основные
 
-First, follow the [Getting Started guide](/react-native/docs/getting-started.html) for your development environment and the iOS target platform to install the prerequisites for React Native.
+В качестве первого шага изучите руководство [Знакомство с React Native](/react-native/docs/getting-started.html) для вашей среды разработки и целевой платформы iOS, чтобы установить необходимые для React Native зависимости.
 
 ### CocoaPods
 
-[CocoaPods](http://cocoapods.org) is a package management tool for iOS and Mac development. We use it to add the actual React Native framework code locally into your current project.
+[CocoaPods](http://cocoapods.org) - менеджер пакетов для разработки на Mac и iOS. Он используется чтобы добавить актуальный код платформы React Native в ваш проект.
 
 ```bash
 $ sudo gem install cocoapods
 ```
 
-> It is technically possible not to use CocoaPods, but this requires manual library and linker additions that overly complicates this process.
+> Технически, можно не использовать CocoaPods, но при этом вам потребуется устаноить библиотеки и дополнения компоновщика вручную, что чрезмерно усложнит этот процесс.
 
-## Our Sample App
+## Демонстрационное мобильное приложение
 
 <block class="objc" />
 
-Assume the [app for integration](https://github.com/JoelMarcey/iOS-2048) is a [2048](https://en.wikipedia.org/wiki/2048_(video_game)) game. Here is what the main menu of the native application looks like without React Native.
+Предположим что [мобильное приложение для интеграции](https://github.com/JoelMarcey/iOS-2048) это игра [2048](https://en.wikipedia.org/wiki/2048_(video_game)). Вот так выглядит главное меню нативного приложения без использования React Native.
 
 <block class="swift" />
 
-Assume the [app for integration](https://github.com/JoelMarcey/swift-2048) is a [2048](https://en.wikipedia.org/wiki/2048_(video_game) game. Here is what the main menu of the native application looks like without React Native.
+Предположим что [мобильное приложение для интеграции](https://github.com/JoelMarcey/swift-2048) это игра [2048](https://en.wikipedia.org/wiki/2048_(video_game). Вот так выглядит главное меню нативного приложения без использования React Native.
 
 <block class="objc swift" />
 
-![Before RN Integration](img/react-native-existing-app-integration-ios-before.png)
+![До интеграции RN](img/react-native-existing-app-integration-ios-before.png)
 
-## Package Dependencies
+## Зависимости
 
-React Native integration requires both the React and React Native node modules. The React Native Framework will provide the code to allow your application integration to happen.
+Для интеграция с React Native требуются React и модули nodejs React Native. Платформа React Native предоставит код, с помощью которого осуществляется интеграции вашего приложения.
 
 
 ### `package.json`
 
-We will add the package dependencies to a `package.json` file. Create this file in the root of your project if it does not exist.
+В файл `package.json` мы добавим зависимости пакета. Создайте этот файл в корневой директории вашего проекта если его там еще нет.
 
-> Normally with React Native projects, you will put files like `package.json`, `index.ios.js`, etc. in the root directory of your project and then have your iOS specific native code in a subdirectory like `ios/` where your Xcode project is located (e.g., `.xcodeproj`).
+> Обычно при работе с проектами React Native вы разместите такие файлы как `package.json`, `index.ios.js` и т.д. в корневом каталоге вашего проекта, а затем расположите нативный код iOS в подкаталоге `ios/` в папке проекта Xcode (например, `.xcodeproj`).
 
-Below is an example of what your `package.json` file should minimally contain.
+Ниже указан пример пример файла `package.json`, содержащего минимальную конфигурацию.
 
-> Version numbers will vary according to your needs. Normally the latest versions for both [React](https://github.com/facebook/react/releases) and [React Native](https://github.com/facebook/react/releases) will be sufficient.
+> Номера версий могут менятся в зависимости от ваших потребностей. Но в большинстве случаев будет достаточно последних версий [React](https://github.com/facebook/react/releases) и [React Native](https://github.com/facebook/react/releases).
 
 <block class="objc" />
 
@@ -164,9 +164,9 @@ Below is an example of what your `package.json` file should minimally contain.
 
 <block class="objc swift" />
 
-### Packages Installation
+### Установка пакетов
 
-Install the React and React Native modules via the Node package manager. The Node modules will be installed into a `node_modules/` directory in the root of your project.
+Установите React и модули React Native с помощью менеджера пакетов Node. Модули Node будут установлены в каталог `node_modules/` в корневой директории вашего проекта.
 
 ```bash
 # From the directory containing package.json project, install the modules
@@ -174,43 +174,43 @@ Install the React and React Native modules via the Node package manager. The Nod
 $ npm install
 ```
 
-## React Native Framework
+## Платформа React Native
 
-The React Native Framework was installed as Node module in your project [above](#package-dependencies). We will now install a CocoaPods `Podfile` with the components you want to use from the framework itself.
+Вы [уже установили](#package-dependencies) платформу React Native в виде модуля Node в вашем проекте. Теперь мы установим CocoaPods `Podfile` с дополнительными компонентами.
 
 ### Subspecs
 
-Before you integrate React Native into your application, you will want to decide what parts of the React Native Framework you would like to integrate. That is where `subspec`s come in. When you create your `Podfile`, you are going to specify React Native library dependencies that you will want installed so that your application can use those libraries. Each library will become a `subspec` in the `Podfile`.
+Перед тем как интегрировать React Native в свое приложение, определитесь какие компоненты платформы React Native потребуются для вашего проекта. На этом этапе появляются `subspec`. При создании `Podfile`, вы указываете зависимости библиотек React Native, которые установите для того чтобы ваше приложение могло пользоваться ими. Каждая библиотека указывается в `Podfile` как `subspec`.
 
 
-The list of supported `subspec`s are in [`node_modules/react-native/React.podspec`](https://github.com/facebook/react-native/blob/master/React.podspec). They are generally named by functionality. For example, you will generally always want the `Core` `subspec`. That will get you the `AppRegistry`, `StyleSheet`, `View` and other core React Native libraries. If you want to add the React Native `Text` library (e.g., for `<Text>` elements), then you will need the `RCTText` `subspec`. If you want the `Image` library (e.g., for `<Image>` elements), then you will need the `RCTImage` `subspec`.
+Список поддерживаемых `subspec` находится в файле [`node_modules/react-native/React.podspec`](https://github.com/facebook/react-native/blob/master/React.podspec). Они обычно называются соответственно функциональности. Например, вам всегда понадобится `subspec` `Core`. Она предоставит вам `AppRegistry`, `StyleSheet`, `View` и другие базовые библиотеки React Native. Если вы захотите добавить библиотеку `Text` (например, для элементов `<Text>`), то вам потребуется `subspec` `RCTText`. Если вы захотите добавить библиотеку `Image` (например, для элементов `<Image>`), то вам потребуется `subspec` `RCTImage`.
 
 #### Podfile
 
-After you have used Node to install the React and React Native frameworks into the `node_modules` directory, and you have decided on what React Native elements you want to integrate, you are ready to create your `Podfile` so you can install those components for use in your application.
+После того как вы установили React и компоненты React Native в директорию `node_modules` с помощью Node и выбрали, какие элементы React Native вам требуется интегрировать, можете создать свой `Podfile` чтобы установить эти компоненты для использования в вашем приложении.
 
-The easiest way to create a `Podfile` is by using the CocoaPods `init` command in the native iOS code directory of your project:
+Проще всего создать `Podfile` это использовать команду `init` CocoaPods в каталоге нативного кода iOS в вашем проекте:
 
 ```bash
-## In the directory where your native iOS code is located (e.g., where your `.xcodeproj` file is located)
+## В директории, где расположен ваш нативный код iOS (например, где находится файл `.xcodeproj`)
 $ pod init
 ```
 
-The `Podfile` will be created and saved in the *iOS* directory (e.g., `ios/`) of your current project and will contain a boilerplate setup that you will tweak for your integration purposes. In the end, `Podfile` should look something similar to this:
+`Podfile` будет создан и расположится в каталоге *iOS* (например, `ios/`) вашего проекта и будет содержать базовую установку, которую можно настроить под ваши конктретные нужды. В итоге `Podfile` должен выглядеть как-то так:
 
 <block class="objc" />
 
 ```
-# The target name is most likely the name of your project.
+# Target это скорее всего это название вашего проекта.
 target 'NumberTileGame' do
 
-  # Your 'node_modules' directory is probably in the root of your project,
-  # but if not, adjust the `:path` accordingly
+  # Директория 'node_modules' вероятно расположена в корневой папке вашего проекта,
+  # но если она находится не там, измените `:path` соответственно
   pod 'React', :path => '../node_modules/react-native', :subspecs => [
     'Core',
     'RCTText',
-    'RCTWebSocket', # needed for debugging
-    # Add any other subspecs you want to use in your project
+    'RCTWebSocket', # нужно для отладки
+    # Добавьте любые другие subspec, которые вы  хотите использованть в своем проекте
   ]
 
 end
@@ -221,20 +221,20 @@ end
 ```
 source 'https://github.com/CocoaPods/Specs.git'
 
-# Required for Swift apps
+# Требуется для приложений Swift
 platform :ios, '8.0'
 use_frameworks!
 
-# The target name is most likely the name of your project.
+# Target это скорее всего это название вашего проекта.
 target 'swift-2048' do
 
-  # Your 'node_modules' directory is probably in the root of your project,
-  # but if not, adjust the `:path` accordingly
+  # Директория 'node_modules' вероятно расположена в корневой папке вашего проекта,
+  # но если она находится не там, измените `:path` соответственно
   pod 'React', :path => '../node_modules/react-native', :subspecs => [
     'Core',
     'RCTText',
     'RCTWebSocket', # needed for debugging
-    # Add any other subspecs you want to use in your project
+    # Добавьте любые другие subspec, которые вы  хотите использованть в своем проекте
   ]
 
 end
@@ -242,15 +242,15 @@ end
 
 <block class="objc swift" />
 
-#### Pod Installation
+#### Установка Pod
 
-After you have created your `Podfile`, you are ready to install the React Native pod.
+После того, как вы создали `Podfile`, вы можете установить pod React Native.
 
 ```bash
 $ pod install
 ```
 
-Your should see output such as:
+Вы должны увидеть такой вывод:
 
 ```bash
 Analyzing dependencies
@@ -265,32 +265,32 @@ Pod installation complete! There are 3 dependencies from the Podfile and 1 total
 
 <block class="swift" />
 
-> If you get a warning such as "*The `swift-2048 [Debug]` target overrides the `FRAMEWORK_SEARCH_PATHS` build setting defined in `Pods/Target Support Files/Pods-swift-2048/Pods-swift-2048.debug.xcconfig`. This can lead to problems with the CocoaPods installation*", then make sure the `Framework Search Paths` in `Build Settings` for both `Debug` and `Release` only contain `$(inherited)`.
+> Если вы видите предупреждение "*The `swift-2048 [Debug]` target overrides the `FRAMEWORK_SEARCH_PATHS` build setting defined in `Pods/Target Support Files/Pods-swift-2048/Pods-swift-2048.debug.xcconfig`. This can lead to problems with the CocoaPods installation*", убедитесь что настройка `Framework Search Paths` в меню `Build Settings` для режимов `Debug` и `Release` содержит только `$(inherited)`.
 
 <block class="objc swift" />
 
-## Code Integration
+## Интеграция кода
 
-Now that we have a package foundation, we will actually modify the native application to integrate React Native into the application. For our 2048 app, we will add a "High Score" screen in React Native.
+Теперь, когда у нас есть основа пакета, мы изменим нативное приложение чтобы интегрировать React Native в приложение. Для нашего мобильного приложения 2048 мы добавим экран "High Score" с помощью React Native.
 
-### The React Native component
+### Компонент React Native
 
-The first bit of code we will write is the actual React Native code for the new "High Score" screen that will be integrated into our application.
+Первые строки кода, которые мы напишем, являются реальным кодом React Native для нового экрана "High Score",который будет интегрирован в наше приложение.
 
-#### Create a `index.ios.js` file
+#### Создайте файл `index.ios.js`
 
-First, create an empty `index.ios.js` file. For ease, I am doing this in the root of the project.
+Сначала создайте пустой файл `index.ios.js`. Для простоты мы создаем этот файл в корнвой директории проекта.
 
-> `index.ios.js` is the starting point for React Native applications on iOS. And it is always required. It can be a small file that `require`s other file that are part of your React Native component or application, or it can contain all the code that is needed for it. In our case, we will just put everything in `index.ios.js`
+> `index.ios.js` отправная точка для приложений React Native на iOS. Он требуется всегда. Это может быть небольшой файл, который `require` другие файлы, являющиеся частью вашего компонента React Native или приложения, или он может содержать весь код, который необходим вашему приложению. В нашем случае мы просто поместим весь код в файл `index.ios.js`
 
 ```bash
-# In root of your project
+# В корневой директории вашего проекта
 $ touch index.ios.js
 ```
 
-#### Add Your React Native Code
+#### Добавьте свой код React Native
 
-In your `index.ios.js`, create your component. In our sample here, we will add simple `<Text>` component within a styled `<View>`
+Создайте свой компонент в файле `index.ios.js`. В нашем образце мы добавим простой компонент `<Text>` в стилизованный компонент `<View>`
 
 ```js
 'use strict';
@@ -344,37 +344,37 @@ const styles = StyleSheet.create({
 AppRegistry.registerComponent('RNHighScores', () => RNHighScores);
 ```
 
-> `RNHighScores` is the name of your module that will be used when you add a view to React Native from within your iOS application.
+> `RNHighScores` это название вашего модуля, которое будет использоваться для добавления представления в React Native из вашего приложения iOS.
 
-## The Magic: `RCTRootView`
+## Магия: `RCTRootView`
 
-Now that your React Native component is created via `index.ios.js`, you need to add that component to a new or existing `ViewController`. The easiest path to take is to optionally create an event path to your component and then add that component to an existing `ViewController`.
+Теперь, когда ваш компонент React Native создан в `index.ios.js`, нужно присоединить компонент к новому или существующему `ViewController`. Проще всего это сделать - создать дополнительный создать путь события к вашему компоненту и затем добавить этот компонент к существующему `ViewController`.
 
-We will tie our React Native component with a new native view in the `ViewController` that will actually host it called `RCTRootView` .
+Мы свяжем наш компонент React Native с новым нативным представлением во `ViewController` который фактически будет содержать его, вызывая `RCTRootView` .
 
-### Create an Event Path
+### Создайте путь событи
 
-You can add a new link on the main game menu to go to the "High Score" React Native page.
+В главное меню игры можно добавить новую ссылку для перехода на страницу "High Score", созданную с помощью React Native.
 
-![Event Path](img/react-native-add-react-native-integration-link.png)
+![Путь события](img/react-native-add-react-native-integration-link.png)
 
-#### Event Handler
+#### Обработчик события
 
-We will now add an event handler from the menu link. A method will be added to the main `ViewController` of your application. This is where `RCTRootView` comes into play.
+Теперь мы добавим обработчик события к ссылке меню. Для этого к основному `ViewController` вашего приложения будет добавлен новый метод. Здесь главную роль играет `RCTRootView`.
 
-When you build a React Native application, you use the React Native packager to create an `index.ios.bundle` that will be served by the React Native server. Inside `index.ios.bundle` will be our `RNHighScore` module. So, we need to point our `RCTRootView` to the location of the `index.ios.bundle` resource (via `NSURL`) and tie it to the module.
+Когда вы создаете приложение React Native, вы используете упаковщик React Native чтобы создать файл `index.ios.bundle`, который будет обслуживаться сервером React Native. Внутри `index.ios.bundle` будет расположен наш модуль `RNHighScore`. Таким образом, мы должны направить наш `RCTRootView` на расположение ресурса `index.ios.bundle` (через `NSURL`) и связать его с модулем.
 
-We will, for debugging purposes, log that the event handler was invoked. Then, we will create a string with the location of our React Native code that exists inside the `index.ios.bundle`. Finally, we will create the main `RCTRootView`. Notice how we provide `RNHighScores` as the `moduleName` that we created [above](#the-react-native-component) when writing the code for our React Native component.
+Для упрощения отладки мобильного приложения, зарегистрируем тот факт что обработчик событий был вызван. Затем мы создадим строку с указанием расположения нашего кода React Native, который назодится в `index.ios.bundle`. Наконец, мы создадим основной `RCTRootView`. Обратите внимание на то как мы указываем `RNHighScores` как `moduleName` который мы создали [ранее](#the-react-native-component) при написании кода нашего компонента React Native.
 
 <block class="objc" />
 
-First `import` the `RCTRootView` library.
+Сначала произведите `import` библиотеки `RCTRootView`.
 
 ```
 #import "RCTRootView.h"
 ```
 
-> The `initialProperties` are here for illustration purposes so we have some data for our high score screen. In our React Native component, we will use `this.props` to get access to that data.
+> `initialProperties` указаны здесь в иллюстративных целях для того чтобы у нас были некоторые данные для нашего представления "High Scores". Чтобы получить доступ к этим данным в нашем компоненте React Native, мы будем использовать `this.props`.
 
 ```
 - (IBAction)highScoreButtonPressed:(id)sender {
@@ -404,7 +404,7 @@ First `import` the `RCTRootView` library.
 }
 ```
 
-> Note that `RCTRootView initWithURL` starts up a new JSC VM. To save resources and simplify the communication between RN views in different parts of your native app, you can have multiple views powered by React Native that are associated with a single JS runtime. To do that, instead of using `[RCTRootView alloc] initWithURL`, use [`RCTBridge initWithBundleURL`](https://github.com/facebook/react-native/blob/master/React/Base/RCTBridge.h#L93) to create a bridge and then use `RCTRootView initWithBridge`.
+> Обратите внимание что `RCTRootView initWithURL` запускает новую JSC VM. Чтобы оптимизировать использование ресурсов и упростить коммуникацию между представлениями React Native в различных частях вашего нативного мобильного приложения, вы можете использовать различные представления React Native, которые связаны с отдельной средой выполнения JS. Чтобы сделать это, используйте [`RCTBridge initWithBundleURL`](https://github.com/facebook/react-native/blob/master/React/Base/RCTBridge.h#L93) вместо `[RCTRootView alloc] initWithURL` чтобы создать мост, а затем используйте `RCTRootView initWithBridge`.
 
 <block class="swift" />
 
@@ -414,7 +414,7 @@ First `import` the `React` library.
 import React
 ```
 
-> The `initialProperties` are here for illustration purposes so we have some data for our high score screen. In our React Native component, we will use `this.props` to get access to that data.
+> `initialProperties`указаны здесь в иллюстративных целях для того чтобы у нас были некоторые данные для нашего представления "High Scores". Чтобы получить доступ к этим данным в нашем компоненте React Native, мы будем использовать`this.props`.
 
 ```
 @IBAction func highScoreButtonTapped(sender : UIButton) {
@@ -439,33 +439,33 @@ import React
 }
 ```
 
-> Note that `RCTRootView bundleURL` starts up a new JSC VM. To save resources and simplify the communication between RN views in different parts of your native app, you can have multiple views powered by React Native that are associated with a single JS runtime. To do that, instead of using `RCTRootView bundleURL`, use [`RCTBridge initWithBundleURL`](https://github.com/facebook/react-native/blob/master/React/Base/RCTBridge.h#L93) to create a bridge and then use `RCTRootView initWithBridge`.
+> Обратите внимание что `RCTRootView bundleURL` запускает новую JSC VM. Чтобы оптимизировать использование ресурсов и упростить коммуникацию между представлениями React Native в различных частях вашего нативного мобильного приложения, вы можете использовать различные представления React Native, которые связаны с отдельной средой выполнения JS. Чтобы сделать это, используйте [`RCTBridge initWithBundleURL`](https://github.com/facebook/react-native/blob/master/React/Base/RCTBridge.h#L93) вместо `RCTRootView bundleURL`, чтобы создать мост, а затем используйте `RCTRootView initWithBridge`.
 
 <block class="objc" />
 
-> When moving your app to production, the `NSURL` can point to a pre-bundled file on disk via something like `[[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];`. You can use the `react-native-xcode.sh` script in `node_modules/react-native/packager/` to generate that pre-bundled file.
+> При создании рабочей версии вашего мобильного приложения NSURL может указать на предварительно собранный файл на диске подобным образом `[[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];`. Чтобы сгенерировать этот файл, вы можете использовать скрипт `react-native-xcode.sh` из директории `node_modules/react-native/packager/`.
 
 <block class="swift" />
 
-> When moving your app to production, the `NSURL` can point to a pre-bundled file on disk via something like `let mainBundle = NSBundle(URLForResource: "main" withExtension:"jsbundle")`. You can use the `react-native-xcode.sh` script in `node_modules/react-native/packager/` to generate that pre-bundled file.
+> При создании рабочей версии вашего мобильного приложения NSURL может указывать на предварительно собранный файл на диске подобным образом `let mainBundle = NSBundle(URLForResource: "main" withExtension:"jsbundle")`. Чтобы сгенерировать этот файл, вы можете использовать скрипт `react-native-xcode.sh` из директории `node_modules/react-native/packager/`.
 
 <block class="objc swift" />
 
-#### Wire Up
+#### Связка
 
-Wire up the new link in the main menu to the newly added event handler method.
+Свяжите новую ссылку в главном меню с новым методом обработчика событий.
 
-![Event Path](img/react-native-add-react-native-integration-wire-up.png)
+![Путь события](img/react-native-add-react-native-integration-wire-up.png)
 
-> One of the easier ways to do this is to open the view in the storyboard and right click on the new link. Select something such as the `Touch Up Inside` event, drag that to the storyboard and then select the created method from the list provided.
+> Один из самых простых способов сделать это - открыть представление в сценарии и нажать правой кнопкой на новой ссылке. Выберите, например, событие `Touch Up Inside`, перетащите в сценарий, а затем выберите создаваемый метод из списка.
 
-## Test Your Integration
+## перетащите в сценарий, а затем выберите создаваемый метод из списка
 
-You have now done all the basic steps to integrate React Native with your current application. Now we will start the React Native packager to build the `index.ios.bundle` packager and the server running on `localhost` to serve it.
+Вы проделали все основные шаги, необходимые для интегрирования React Native с вашим приложением. Теперь мы запустим упаковщик React Native чтобы создать пакет `index.ios.bundle` и сервер, работающий на `localhost`, чтобы запустить его  .
 
 ### App Transport Security
 
-Apple has blocked implicit cleartext HTTP resource loading. So we need to add the following our project's `Info.plist` (or equivalent) file.
+Apple блокирует загрузку неявных полнотекстовых ресурсов по HTTP. Поэтому мы должны добавить указанный файл `Info.plist` (или его эквивалент).
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -481,59 +481,59 @@ Apple has blocked implicit cleartext HTTP resource loading. So we need to add th
 </dict>
 ```
 
-### Run the Packager
+### Запустите упаковщик
 
 ```bash
-# From the root of your project, where the `node_modules` directory is located.
+# В корневой директории вашего проекта, где расположена папка `node_modules`.
 $ npm start
 ```
 
-### Run the App
+### Запустите мобильное приложение
 
-If you are using Xcode or your favorite editor, build and run your native iOS application as normal. Alternatively, you can run the app from the command line using:
+Запустите сборку с помощью Xcode или вашего избранного редактора, а затем как обычно запустите ваше нативное приложение iOS. Вы также можете запустить мобильное приложение с использованием командной строки:
 
 ```bash
-# From the root of your project
+# В корневой директории вашего проекта
 $ react-native run-ios
 ```
 
-In our sample application, you should see the link to the "High Scores" and then when you click on that you will see the rendering of your React Native component.
+В нашем примере приложения вы должны увидеть ссылку на "High Scores", а после нажатия на нее вы сможете увидеть рендеринг вашего компонента React Native..
 
-Here is the *native* application home screen:
+Основной экран *нативного* приложения:
 
-![Home Screen](img/react-native-add-react-native-integration-example-home-screen.png)
+![Основной экран](img/react-native-add-react-native-integration-example-home-screen.png)
 
-Here is the *React Native* high score screen:
+Экран *React Native*, отображающий экран High Scores:
 
 ![High Scores](img/react-native-add-react-native-integration-example-high-scores.png)
 
-> If you are getting module resolution issues when running your application please see [this GitHub issue](https://github.com/facebook/react-native/issues/4968) for information and possible resolution. [This comment](https://github.com/facebook/react-native/issues/4968#issuecomment-220941717) seemed to be the latest possible resolution.
+> Если при запуске мобильного приложения у вас появляются проблемы с определением модуля, пожалуйста, посмотрите [возможное описание решения на GitHub](https://github.com/facebook/react-native/issues/4968). [ Этот комментарий](https://github.com/facebook/react-native/issues/4968#issuecomment-220941717) был новейшим решением этой проблемы на момент написания этой версии документации.
 
-### See the Code
+### Посмотреть код
 
 <block class="objc" />
 
-You can examine the code that added the React Native screen on [GitHub](https://github.com/JoelMarcey/iOS-2048/commit/9ae70c7cdd53eb59f5f7c7daab382b0300ed3585).
+Вы можете изучить приведенный здесь код на [GitHub](https://github.com/JoelMarcey/iOS-2048/commit/9ae70c7cdd53eb59f5f7c7daab382b0300ed3585).
 
 <block class="swift" />
 
-You can examine the code that added the React Native screen on [GitHub](https://github.com/JoelMarcey/swift-2048/commit/13272a31ee6dd46dc68b1dcf4eaf16c1a10f5229).
+Вы можете изучить приведенный здесь код на [GitHub](https://github.com/JoelMarcey/swift-2048/commit/13272a31ee6dd46dc68b1dcf4eaf16c1a10f5229).
 
 <block class="android" />
 
-## Add JS to your app
+## Добавьте JS в свое мобильное приложение
 
-In your app's root folder, run:
+В корневом каталоге вашего мобильного приложения запустите:
 
     $ npm init
     $ npm install --save react-native
     $ curl -o .flowconfig https://raw.githubusercontent.com/facebook/react-native/master/.flowconfig
 
-This creates a node module for your app and adds the `react-native` npm dependency. Now open the newly created `package.json` file and add this under `scripts`:
+Этот код создаст модуль nodejs для вашего мобильного приложения и добавит зависимость npm `react-native`. Теперь откройте только что созданный файл `package.json` и добавьте следующий код в раздел `scripts`:
 
     "start": "node node_modules/react-native/local-cli/cli.js start"
 
-Copy & paste the following code to `index.android.js` in your root folder — it's a barebones React Native app:
+Скопируйте и вставьте нижеследующий код в файл `index.android.js` находящийся в вашем корневом каталоге. Это скелет мобильного приложения React Native:
 
 ```js
 'use strict';
@@ -570,20 +570,20 @@ var styles = StyleSheet.create({
 AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
 ```
 
-## Prepare your current app
+## Подготовка существующего мобильного приложения
 
-In your app's `build.gradle` file add the React Native dependency:
+Добавьте зависимость React Native в файл `build.gradle` вашего мобильного приложения:
 
-    compile "com.facebook.react:react-native:+"  // From node_modules
+    compile "com.facebook.react:react-native:+"  // Из node_modules
 
-In your project's `build.gradle` file add an entry for the local React Native maven directory:
+В файл `build.gradle` вашего проекта добавьте локальный каталог React Native maven:
 
 ```
 allprojects {
     repositories {
         ...
         maven {
-            // All of React Native (JS, Android binaries) is installed from npm
+            // Все зависимости React Native (JS, Android binaries) установлены npm
             url "$rootDir/node_modules/react-native/android"
         }
     }
@@ -591,15 +591,15 @@ allprojects {
 }
 ```
 
-Next, make sure you have the Internet permission in your `AndroidManifest.xml`:
+Затем удостоверьтесь что у вас установлены необходимые интернет-разрешения в файле `AndroidManifest.xml`:
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-This is only really used in dev mode when reloading JavaScript from the development server, so you can strip this in release builds if you need to.
+Это потребуется только в режиме разработки для перезагрузки JavaScript с сервера для разработки. Если необходимо, вы можете убрать этот код в сборке продакшн-версии..
 
-## Add native code
+## Добавьте нативный код
 
-You need to add some native code in order to start the React Native runtime and get it to render something. To do this, we're going to create an `Activity` that creates a `ReactRootView`, starts a React application inside it and sets it as the main content view.
+Добавьте нативный код чтобы запустить среду выполнения React Native и заставить ее что-то отобразить. Чтобы это сделать, мы собираемся создать `Activity`, которая создаст `ReactRootView`, запустит приложение React и настроит его как основное представление.
 
 ```java
 public class MyReactActivity extends Activity implements DefaultHardwareBackBtnHandler {
@@ -630,7 +630,7 @@ public class MyReactActivity extends Activity implements DefaultHardwareBackBtnH
     }
 }
 ```
-We need set the theme of `MyReactActivity` to `Theme.AppCompat.Light.NoActionBar` beause some components rely on this theme.
+Нам нужно указать тему `MyReactActivity` как `Theme.AppCompat.Light.NoActionBar` потому что некоторые компоненты зависят от нее.
 ```xml
 <activity
   android:name=".MyReactActivity"
@@ -641,9 +641,9 @@ We need set the theme of `MyReactActivity` to `Theme.AppCompat.Light.NoActionBar
 
 
 
-> A `ReactInstanceManager` can be shared amongst multiple activities and/or fragments. You will want to make your own `ReactFragment` or `ReactActivity` and have a singleton *holder* that holds a `ReactInstanceManager`. When you need the `ReactInstanceManager` (e.g., to hook up the `ReactInstanceManager` to the lifecycle of those Activities or Fragments) use the one provided by the singleton.
+> `ReactInstanceManager` может быть использован совместно различными активностями и/или фрагментами. Вам потребуется создать собственный `ReactFragment` или `ReactActivity` и иметь *контейнер* синглета, который содержит `ReactInstanceManager`. Когда вам требуется `ReactInstanceManager` (например, чтобы подключить `ReactInstanceManager` к жизненному циклу Активностей или Фрагментов), используйте предлагаемый синглет.
 
-Next, we need to pass some activity lifecycle callbacks down to the `ReactInstanceManager`:
+Затем нам нужно передать колбэки жизненного цикла Активности в `ReactInstanceManager`:
 
 ```java
 @Override
@@ -674,7 +674,7 @@ protected void onDestroy() {
 }
 ```
 
-We also need to pass back button events to React Native:
+Мы также должны обработать нажатие кнопки "Назад" в React Native:
 
 ```java
 @Override
@@ -687,9 +687,9 @@ We also need to pass back button events to React Native:
 }
 ```
 
-This allows JavaScript to control what happens when the user presses the hardware back button (e.g. to implement navigation). When JavaScript doesn't handle a back press, your `invokeDefaultOnBackPressed` method will be called. By default this simply finishes your `Activity`.
+Вышеприведенный код позволяет JavaScript управлять тем, что происходит, когда пользователь нажимает аппаратную кнопку "Назад" (например, для реализации навигации). Если JavaScript не обрабатывает нажатие кнопки "Назад", может быть вызван метод `invokeDefaultOnBackPressed`. По умолчанию это просто завершит вашу `Activity`.
 
-Finally, we need to hook up the dev menu. By default, this is activated by (rage) shaking the device, but this is not very useful in emulators. So we make it show when you press the hardware menu button:
+Наконец, мы должны подключить Меню Разработчика. По умолчанию оно активируется сильным встряхиванием устройства, но это не очень удобно в эмуляторах. Вот так мы отображаем меню когда вы нажимаете клавишу меню телефона::
 
 ```java
 @Override
@@ -702,21 +702,21 @@ public boolean onKeyUp(int keyCode, KeyEvent event) {
 }
 ```
 
-That's it, your activity is ready to run some JavaScript code.
+Вот и все. Теперь ваша Активность готова к запуску кода JavaScript
 
-## Run your app
+## Запустите ваше мобильное приложение
 
-To run your app, you need to first start the development server. To do this, simply run the following command in your root folder:
+Чтобы запустить ваше мобильное приложение, нужно сначала запустить сервер разработки. Чтобы сделать это, просто выполните нижеследующую команду из корневого каталога:
 
     $ npm start
 
-Now build and run your Android app as normal (e.g. `./gradlew installDebug`). Once you reach your React-powered activity inside the app, it should load the JavaScript code from the development server and display:
+Теперь соберите и запустите свое мобильное приложение Android как обычно (например `./gradlew installDebug`). Когда вы перейдете к Активности, которая создана на React, она должна загрузить код JavaScript с сервера разработки и отобразить следующее:
 
-![Screenshot](img/EmbeddedAppAndroid.png)
+![Скриншот](img/EmbeddedAppAndroid.png)
 
 <script>
-// Convert <div>...<span><block /></span>...</div>
-// Into <div>...<block />...</div>
+// Конвертация <div>...<span><block /></span>...</div>
+// В форму <div>...<block />...</div>
 var blocks = document.getElementsByTagName('block');
 for (var i = 0; i < blocks.length; ++i) {
   var block = blocks[i];
@@ -725,8 +725,8 @@ for (var i = 0; i < blocks.length; ++i) {
   container.insertBefore(block, span);
   container.removeChild(span);
 }
-// Convert <div>...<block />content<block />...</div>
-// Into <div>...<block>content</block><block />...</div>
+// Конвертация <div>...<block />content<block />...</div>
+// В форму <div>...<block>content</block><block />...</div>
 blocks = document.getElementsByTagName('block');
 for (var i = 0; i < blocks.length; ++i) {
   var block = blocks[i];
