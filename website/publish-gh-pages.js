@@ -73,25 +73,12 @@ if (!CI_PULL_REQUEST && CIRCLE_PROJECT_USERNAME === `egeshi`) {
 
   versions.sort(semverCmp).reverse();
 
-  // generate to releases/XX when branch name indicates that it is some sort of release
-  if (!!version) {
-    echo(`------------ DEPLOYING /releases/${version}`);
-    rm(`-rf`, `releases/${version}`);
-    mkdir(`-p`, `releases/${version}`);
-    cd(`../..`);
-    if (exec(`RN_DEPLOYMENT_PATH=releases/${version} RN_VERSION=${version} RN_LATEST_VERSION=${latestVersion} \
-    RN_AVAILABLE_DOCS_VERSIONS=${versions.join(',')} node server/generate.js`).code !== 0) {
-      echo(`Error: Generating HTML failed`);
-      exit(1);
-    }
-    cd(`build/react-native-gh-pages`);
-    let toCopy = ls(`../react-native`)
-      .filter(file => file !== `blog`)
-      .map(file => `../react-native/${file}`);
-    cp(`-R`, toCopy, `releases/${version}`);
-    // versions.html is located in root of website and updated with every release
-    cp(`../react-native/versions.html`, `.`);
-  }
+  //console.log("versions:", versions);
+  //console.log("version: %s", version);
+  //console.log("currentCommit: %s", currentCommit);
+  //console.log("latestTagCommit: %s", latestTagCommit);
+  //exit(1);
+
   // generate to root folder when commit is tagged as latest, i.e. stable and needs to be shown at the root of repo
   if (currentCommit === latestTagCommit) {
     echo(`------------ DEPLOYING latest`);
@@ -110,6 +97,27 @@ if (!CI_PULL_REQUEST && CIRCLE_PROJECT_USERNAME === `egeshi`) {
       .map(file => `../react-native/${file}`);
     cp(`-R`, toCopy, `.`);
   }
+
+  // generate to releases/XX when branch name indicates that it is some sort of release
+  if (!!version) {
+    echo(`------------ DEPLOYING /releases/${version}`);
+    rm(`-rf`, `releases/${version}`);
+    mkdir(`-p`, `releases/${version}`);
+    cd(`../..`);
+    if (exec(`RN_DEPLOYMENT_PATH=releases/${version} RN_VERSION=${version} RN_LATEST_VERSION=${latestVersion} \
+    RN_AVAILABLE_DOCS_VERSIONS=${versions.join(',')} node server/generate.js`).code !== 0) {
+      echo(`Error: Generating HTML failed`);
+      exit(1);
+    }
+    cd(`build/react-native-gh-pages`);
+    let toCopy = ls(`../react-native`)
+        .filter(file => file !== `blog`)
+        .map(file => `../react-native/${file}`);
+    cp(`-R`, toCopy, `releases/${version}`);
+    // versions.html is located in root of website and updated with every release
+    cp(`../react-native/versions.html`, `.`);
+  }
+
   // blog is versionless, we always build it in root file
   if (isBlogToBeDeployed) {
     echo(`------------ COPYING blog`);
