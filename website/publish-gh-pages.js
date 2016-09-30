@@ -15,7 +15,7 @@ const CIRCLE_BRANCH = process.env.CIRCLE_BRANCH;
 const CIRCLE_PROJECT_USERNAME = process.env.CIRCLE_PROJECT_USERNAME;
 const CI_PULL_REQUEST = process.env.CI_PULL_REQUEST;
 const GIT_USER = process.env.GIT_USER;
-const remoteBranch = `https://github.com/egeshi/react-native.git`;
+const remoteBranch = `https://${GIT_USER}@github.com/facebook/react-native.git`;
 
 if (!which(`git`)) {
   echo(`Sorry, this script requires git`);
@@ -23,12 +23,12 @@ if (!which(`git`)) {
 }
 
 let version;
-let isBlogToBeDeployed = false;
+let areVersionlessSectionsToBeDeployed = false;
 if (CIRCLE_BRANCH.indexOf(`-stable`) !== -1) {
   version = CIRCLE_BRANCH.slice(0, CIRCLE_BRANCH.indexOf(`-stable`));
 } else if (CIRCLE_BRANCH === `master`) {
   version = `next`;
-  isBlogToBeDeployed = true;
+  areVersionlessSectionsToBeDeployed = true;
 }
 
 rm(`-rf`, `build`);
@@ -43,7 +43,7 @@ if (branchWithLatestTag.indexOf(`-stable`) !== -1) {
   latestVersion = branchWithLatestTag.slice(0, branchWithLatestTag.indexOf(`-stable`));
 }
 
-if (!CI_PULL_REQUEST && CIRCLE_PROJECT_USERNAME === `egeshi`) {
+if (!CI_PULL_REQUEST && CIRCLE_PROJECT_USERNAME === `facebook`) {
   echo(`Building branch ${version}, preparing to push to gh-pages`);
   // if code is running in a branch in CI, commit changes to gh-pages branch
   cd(`build`);
@@ -73,31 +73,6 @@ if (!CI_PULL_REQUEST && CIRCLE_PROJECT_USERNAME === `egeshi`) {
 
   versions.sort(semverCmp).reverse();
 
-  //console.log("versions:", versions);
-  //console.log("version: %s", version);
-  //console.log("currentCommit: %s", currentCommit);
-  //console.log("latestTagCommit: %s", latestTagCommit);
-  //exit(1);
-
-  // generate to root folder when commit is tagged as latest, i.e. stable and needs to be shown at the root of repo
-  if (currentCommit === latestTagCommit) {
-    echo(`------------ DEPLOYING latest`);
-    // leave only releases and blog folder
-    rm(`-rf`, ls(`*`).filter(name => (name !== 'releases') && (name !== 'blog')));
-    cd(`../..`);
-    if (exec(`RN_VERSION=${version} RN_LATEST_VERSION=${latestVersion} \
-    RN_AVAILABLE_DOCS_VERSIONS=${versions} node server/generate.js`).code !== 0) {
-      echo(`Error: Generating HTML failed`);
-      exit(1);
-    }
-    cd(`build/react-native-gh-pages`);
-    // blog is copied separately
-    let toCopy = ls(`../react-native`)
-      .filter(file => file !== `blog`)
-      .map(file => `../react-native/${file}`);
-    cp(`-R`, toCopy, `.`);
-  }
-
   // generate to releases/XX when branch name indicates that it is some sort of release
   if (!!version) {
     echo(`------------ DEPLOYING /releases/${version}`);
@@ -110,19 +85,41 @@ if (!CI_PULL_REQUEST && CIRCLE_PROJECT_USERNAME === `egeshi`) {
       exit(1);
     }
     cd(`build/react-native-gh-pages`);
+    // blog, showcase, support are copied separately
     let toCopy = ls(`../react-native`)
-        .filter(file => file !== `blog`)
-        .map(file => `../react-native/${file}`);
+      .filter(file => (file !== `blog`) && (file !== `showcase.html`) && (file !== `support.html`))
+      .map(file => `../react-native/${file}`);
     cp(`-R`, toCopy, `releases/${version}`);
     // versions.html is located in root of website and updated with every release
     cp(`../react-native/versions.html`, `.`);
   }
-
-  // blog is versionless, we always build it in root file
-  if (isBlogToBeDeployed) {
+  // generate to root folder when commit is tagged as latest, i.e. stable and needs to be shown at the root of repo
+  if (currentCommit === latestTagCommit) {
+    echo(`------------ DEPLOYING latest`);
+    // leave only releases and blog folder
+    rm(`-rf`, ls(`*`).filter(name => (name !== 'releases') && (name !== 'blog') && (name !== 'showcase.html') && (name !== 'support.html')));
+    cd(`../..`);
+    if (exec(`RN_VERSION=${version} RN_LATEST_VERSION=${latestVersion} \
+    RN_AVAILABLE_DOCS_VERSIONS=${versions} node server/generate.js`).code !== 0) {
+      echo(`Error: Generating HTML failed`);
+      exit(1);
+    }
+    cd(`build/react-native-gh-pages`);
+    // blog, showcase, support are copied separately
+    let toCopy = ls(`../react-native`)
+      .filter(file => (file !== `blog`) && (file !== `showcase.html`) && (file !== `support.html`))
+      .map(file => `../react-native/${file}`);
+    cp(`-R`, toCopy, `.`);
+  }
+  // blog, showcase, support are versionless, we always build them in root file
+  if (areVersionlessSectionsToBeDeployed) {
     echo(`------------ COPYING blog`);
     rm(`-rf`, `blog`);
     cp(`-R`, `../react-native/blog`, `.`);
+    echo(`------------ COPYING showcase`);
+    cp(`../react-native/showcase.html`, `.`);
+    echo(`------------ COPYING support`);
+    cp(`../react-native/support.html`, `.`);
   }
   if (currentCommit === latestTagCommit || version) {
     exec(`git status`);

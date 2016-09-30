@@ -19,27 +19,85 @@ var Site = React.createClass({
     const version = Metadata.config.RN_VERSION;
     const algoliaVersion = version === 'next' ? 'master' : version;
     var basePath = '/react-native/' + (path ? path + '/' : '');
-    var title = this.props.title ? this.props.title + ' – ' : '';
     var currentYear = (new Date()).getFullYear();
-    title += 'React Native на русском | Фреймворк для разработки нативных мобильных приложений на React';
-    var description = this.props.description ? this.props.description : 'Фреймворк для разработки нативных мобильных приложений на React';
-    var shareURL = 'https://github.com/egeshi/react-native/';
-    shareURL += this.props.path ? this.props.path : 'index.html';
+
+    var title = this.props.title ? this.props.title : 'React Native на русском | Фреймворк для разработки нативных мобильных приложений на React';
+
+    var metaTags = [
+      { charSet: "utf-8" },
+      {
+        httpEquiv: "X-UA-Compatible",
+        content: "IE=edge,chrome=1",
+      },
+      {
+        name: "viewport",
+        content: "width=device-width",
+      },
+      // Facebook
+      { property: "fb:app_id", content: "1677033832619985", },
+      { property: "fb:admins", content: "121800083", },
+      // Open Graph
+      {
+        property: "og:site_name",
+        content: "React Native",
+      },
+      {
+        property: "og:title",
+        content: title,
+      },
+      {
+        property: "og:url",
+        content: "https://github.com/egeshi/react-native/" + (this.props.path ? this.props.path : "index.html"),
+      },
+      {
+        property: "og:image",
+        content: this.props.image ? this.props.image : "https://github.com/egeshi/react-native/img/opengraph.png",
+      },
+      {
+        property: "og:description",
+        content: this.props.description ? this.props.description : "Фреймворк для разработки нативных мобильных приложений на React",
+      },
+      // Twitter Cards
+      {
+        name: "twitter:site",
+        content: "@antonyrepin",
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+    ];
+
+    var typeTags = [{
+      property: "og:type",
+      content: "website",
+    }];
+    if (this.props.author) {
+      typeTags = [{
+        property: "og:type",
+        content: "article",
+      }, {
+        property: "article:author",
+        content: this.props.author,
+      }];
+    }
+    metaTags.push(...typeTags);
+
+    if (this.props.authorTwitter) {
+      metaTags.push({
+        name: "twitter:creator",
+        content: "@" + this.props.authorTwitter,
+      });
+    }
 
     return (
       <html>
         <head>
-          <meta charSet="utf-8" />
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
           <title>{title}</title>
-          <meta name="viewport" content="width=device-width" />
-          <meta property="og:title" content={title} />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content={shareURL} />
-          <meta property="og:image" content="http://facebook.github.io/react-native/img/opengraph.png?2" />
-          <meta property="og:description" content={description} />
-          <meta name="description" content={title} />
-
+          {
+            metaTags.map((tag, index) =>
+              <meta key={index} {...tag} />)
+          }
           <base href={basePath} />
 
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
