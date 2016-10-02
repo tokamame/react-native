@@ -1,8 +1,8 @@
 ---
 id: signed-apk-android
-title: Generating Signed APK
+title: Создание подписанного APK
 layout: docs
-category: Guides (Android)
+category: Руководства (Android)
 permalink: docs/signed-apk-android.html
 next: android-ui-performance
 previous: running-on-device-android

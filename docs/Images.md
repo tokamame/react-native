@@ -1,8 +1,8 @@
 ---
 id: images
-title: Images
+title: Изображения
 layout: docs
-category: Guides
+category: Руководства
 permalink: docs/images.html
 next:  handling-touches
 previous: colors

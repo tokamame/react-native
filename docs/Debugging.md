@@ -1,8 +1,8 @@
 ---
 id: debugging
-title: Debugging
+title: Устранение ошибок
 layout: docs
-category: Guides
+category: Руководства
 permalink: docs/debugging.html
 next: testing
 previous: direct-manipulation

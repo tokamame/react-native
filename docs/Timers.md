@@ -1,8 +1,8 @@
 ---
 id: timers
-title: Timers
+title: Таймеры
 layout: docs
-category: Guides
+category: Руководства
 permalink: docs/timers.html
 next: direct-manipulation
 previous: accessibility

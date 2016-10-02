@@ -61,218 +61,216 @@ block { display: none; }
 
 <block class="mac ios android" />
 
-## Installing Dependencies
+## Установка зависимостей
 
 <block class="mac ios" />
 
-You will need Node.js, Watchman, the React Native command line interface, and Xcode.
+Вам понадобятся Node.js, Watchman, инструменты командной строки React Native и Xcode.
 
 <block class="mac android" />
 
-You will need Node.js, Watchman, the React Native command line interface, and Android Studio.
+Вам понадобятся Node.js, Watchman, инструменты командной строки React Native и Android Studio.
 
 <block class="mac ios android" />
 
 ### Node, Watchman
 
-We recommend installing Node and Watchman using [Homebrew](http://brew.sh/). Run the following commands in a Terminal after installing Homebrew:
+Мы рекомендуем устанавливать Node и Watchman используя [Homebrew](http://brew.sh/). После установки Homebrew выполните следующие команды в терминале:
 
 ```
 brew install node
 brew install watchman
 ```
 
-> [Watchman](https://facebook.github.io/watchman) is a tool by Facebook for watching
-changes in the filesystem. It is highly recommended you install it for better performance.
+> [Watchman](https://facebook.github.io/watchman) это инструмент Facebook для наблюдения за изменениями в файловой системе.
+Рекомендуется установить его для лучшей производительности.
 
-### The React Native CLI
+### Интерфейс командной строки React Native
 
-Node.js comes with npm, which lets you install the React Native command line interface. Run the following command in a Terminal:
+Node.js поставляется с npm, который позволяет вам установить интерфейс командной строки React Native. Выполните следующие команды в терминале:
 
 ```
 npm install -g react-native-cli
 ```
 
-> If you get a *permission error*, try using sudo: `sudo npm install -g react-native-cli`.
+> Если вы видите ошибку *отказано в доступе*, попробуйте использовать sudo: `sudo npm install -g react-native-cli`.
 
-> If you get an error like `Cannot find module 'npmlog'`, try installing npm directly: `curl -0 -L http://npmjs.org/install.sh | sudo sh`.
+> Если вы видите ошибку `Cannot find module 'npmlog'`, попробуйте установить npm следующим образом: `curl -0 -L http://npmjs.org/install.sh | sudo sh`.
 
 <block class="mac ios" />
 
 ### Xcode
 
-The easiest way to install Xcode is via the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12). Installing Xcode will also install the iOS Simulator and all the necessary tools to build your iOS app.
+Проще всего установить Xcode из [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12). Вместе с Xcode будет установлен симулятор iOS а также все необходимые иснтрументы для сборки вашего приложения iOS.
 
 <block class="mac android" />
 
-### Android Development Environment
+### Среда разработки Android
 
-Setting up your development environment can be somewhat tedious if you're new to Android development. If you're already familiar with Android development, there are a few things you may need to configure. In either case, please make sure to carefully follow the next few steps.
+Настройка среды разработки может оказаться непростым делом если вы новичок в разработке для Android. Если вы уже знакомы с разработкой для Android, есть некоторые вещи, которые вам потребуется настроить. В любом случае внимательно выполните следующие шаги.
 
-#### 1. Install Android Studio
+#### 1. Установите Android Studio
 
-Download and install [Android Studio](https://developer.android.com/studio/install.html).
+Скачайте и установите [Android Studio](https://developer.android.com/studio/install.html).
 
-#### 2. Confirm the Android SDK is installed
+#### 2. Убедитесь что Android SDK установлен
 
-Android Studio installs `Android 7.0 (Nougat)` by default. You can confirm that the SDK was installed by clicking on "Configure" in the last screen in the Android Studio Setup Wizard, or by opening "Preferences" from the Android Studio menu, then choosing `Appearance and Behavior` → `System Settings` → `Android SDK`.
+По умолчанию Android Studio устанавливает версию `Android 7.0 (Nougat)`. Вы сможете убедиться что SDK установлен, выбрав "Configure" на последнем шаге процесса установки Android Studio или открыв "Preferences" из меню Android Studio, а затем выбрав `Appearance and Behavior` → `System Settings` → `Android SDK`.
 
-![Android Studio SDK Manager](img/react-native-android-studio-configure-sdk.png)
+![Менеджер Android Studio SDK](img/react-native-android-studio-configure-sdk.png)
 
-Select "SDK Platforms" from within the SDK Manager and you should see a blue checkmark next to "Android 7.0 (Nougat)". In case it is not, click on the checkbox and then "Apply".
+Выберите "SDK Platforms" в менеджере SDK и вы должны уидеть галочку рядом с "Android 7.0 (Nougat)". Если это не так, поставьте галочку а затем нажмите "Apply".
 
-![Android Studio SDK Manager](img/react-native-sdk-platforms.png)
+![Менеджер Android Studio SDK](img/react-native-sdk-platforms.png)
 
-> If you wish to support older versions of Android, you can install additional Android SDKs from this screen.
+> Если вам требуется поддержка более ранних версий Android, то можете установить дополнительные Android SDK на этом же экране.
 
-#### 3. Set up paths
+#### 3. Настройка путей
 
-The React Native command line interface requires the `ANDROID_HOME` environment variable to be set up. You can configure it in a Terminal using the following command:
+Интерфейсу командной строки React Native необходима переменная среды `ANDROID_HOME`. Вы можете установить ее в терминале с помощью следующей команды:
 
 ```
 export ANDROID_HOME=~/Library/Android/sdk
 ```
 
-To avoid doing this every time you open a new Terminal, create (or edit) `~/.bashrc` using your favorite text editor and add the following lines:
+Чтобы не делать это вручную каждый раз, откройте терминал и создайте (или отредактируйте) файл `~/.bashrc` в вашем текстовом редакторе и добавьте следующие строки:
 
 ```
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 ```
 
-The second line will add the `android` tool to your path, which will come in handy in the next step.
+Вторая строка добавит инструмент `android` в переменную пути, который пригодится на следующем шаге.
 
-> Please make sure you export the correct path for `ANDROID_HOME` if you did not install the Android SDK using Android Studio. If you install the Android SDK using Homebrew, it will be located at `/usr/local/opt/android-sdk`.
+> Если вы не станавливали Android SDK с помощью Android Studio, убедитесь что вы экспортируете правильный путь для `ANDROID_HOME`. Если вы устанавливали Android SDK с помощью Homebrew, он будет расположен по пути `/usr/local/opt/android-sdk`.
 
-#### 4. Set up your Android Virtual Device
+#### 4. Установите виртуальное устройство Android
 
-Android Studio should have set up an Android Virtual Device for you during installation, but it is very common to run into an issue where Android Studio fails to install the AVD.
+Android Studio должна была настроить виртуальное устройство Android в процессе установки, но часто случается так что Android Studio не устанавливает AVD (Android Virtual Device).
 
-![Android Studio AVD Manager](img/react-native-tools-avd.png)
+![Менеджер виртуального устройства Android Studio](img/react-native-tools-avd.png)
 
-To see the list of available AVDs, launch the "AVD Manager" from within Android Studio or run the following command in a Terminal:
+Чтобы увидеть список доступных AVD, запустите "AVD Manager" из Android Studio или выполниет в терминале следующую команду:
 
 ```
 android avd
 ```
+Если вам нужно новое виртуальное устройство, воспользуйтесь [Инструкцией Android Studio](https://developer.android.com/studio/run/managing-avds.html) для его создания.
 
-You may follow the [Android Studio User Guide](https://developer.android.com/studio/run/managing-avds.html) to create a new AVD if needed.
-
-> If you see "No system images installed for this target." under CPU/ABI, go back to your "SDK Manager" and click on "Show Package Details" under "SDK Platforms". You will then be able to install any missing system images, such as "Google APIs Intel Atom (x86)".
+> Если вы видите ошибку CPU/ABI "No system images installed for this target.", вернитесь в "SDK Manager" и выберите "Show Package Details" из "SDK Platforms". Вы сможете установить любой из недостающих образов, например "Google APIs Intel Atom (x86)".
 
 <!-- ######### LINUX and WINDOWS for ANDROID ##################### -->
 
 <block class="windows linux android" />
 
-## Installing Dependencies
+## Установка зависимостей
 
 <block class="linux android" />
 
-You will need Node.js, the React Native command line interface, and Android Studio.
+Вам потребуются Node.js, инструменты командной строки React Native и Android Studio.
 
 ### Node
 
-Follow the [installation instructions for your Linux distribution](https://nodejs.org/en/download/package-manager/) to install Node.js 4 or newer.
+Чтобы уствновить Node.js 4 или более новую версию, следуйте [инструкциям по установке для вашего дистрибутива Linux](https://nodejs.org/en/download/package-manager/)
 
 <block class='windows android' />
 
-You will need Node.js, the React Native command line interface, and Android Studio.
+Вам потребуются Node.js, инструменты командной строки React Native и Android Studio.
 
 ### Node
 
-We recommend installing Node.js and Python2 via [Chocolatey](https://chocolatey.org), a popular package manager for Windows. Open a Command Prompt as Administrator, then run:
+Рекомендуется устанавливать Node.js и Python2 с помощью [Chocolatey](https://chocolatey.org), популярного менеджера пакетов для Windows. Откройте командную строку с правами  Администратора и выполните следующую команду:
 
 ```
 choco install nodejs.install
 choco install python2
 ```
 
-> You can find additional installation options on [Node.js's Downloads page](https://nodejs.org/en/download/).
+> Вы можете найти дополнительные варианты установки на [странице загрузки Node.js](https://nodejs.org/en/download/).
 
 <block class="windows linux android" />
 
-### The React Native CLI
+### Интерфейс командной строки React Native
 
-Node comes with npm, which lets you install the React Native command line interface.
+Node поставляется с npm, который позволяет установить интерфейс командной строки React Native.
 
 ```
 npm install -g react-native-cli
 ```
 
-### Android Development Environment
+### Среда разработки Android
 
-Setting up your development environment can be somewhat tedious if you're new to Android development. If you're already familiar with Android development, there are a few things you may need to configure. In either case, please make sure to carefully follow the next few steps.
+Настройка среды разработки может оказаться непростым делом если вы новичок в разработке для Android. Если вы уже знакомы с разработкой для Android, есть некоторые вещи, которые вам потребуется настроить. В любом случае внимательно выполните следующие шаги.
 
-#### 1. Install Android Studio
+#### 1. Установка Android Studio
 
 Загрузите и установите [Android Studio](https://developer.android.com/studio/install.html).
 
-#### 2. Confirm the Android SDK is installed
+#### 2. Убедитесь что Android SDK установлен
 
-Android Studio installs `Android 7.0 (Nougat)` by default. You can confirm that the SDK was installed by clicking on "Configure" in the last screen in the Android Studio Setup Wizard, or by opening "Preferences" from the Android Studio menu, then choosing `Appearance and Behavior` → `System Settings` → `Android SDK`.
+По умолчанию Android Studio устанавливает версию `Android 7.0 (Nougat)`. Вы сможете убедиться что SDK установлен, выбрав "Configure" на последнем шаге процесса установки Android Studio или открыв "Preferences" из меню Android Studio, а затем выбрав `Appearance and Behavior` → `System Settings` → `Android SDK`.
 
-![Android Studio SDK Manager](img/react-native-android-studio-configure-sdk-windows.png)
+![Менеджер Android Studio SDK](img/react-native-android-studio-configure-sdk-windows.png)
 
-Select "SDK Platforms" from within the SDK Manager and you should see a blue checkmark next to "Android 7.0 (Nougat)". In case it is not, click on the checkbox and then "Apply".
+Выбрав "SDK Platforms" в Менеджере SDK вы должны увидеть синюю галочку рядом с "Android 7.0 (Nougat)". Если ее нет, выберите галочку и нажмите "Apply".
 
-![Android Studio SDK Manager](img/react-native-sdk-platforms.png)
+![Менеджер Android Studio SDK](img/react-native-sdk-platforms.png)
 
-> If you wish to support older versions of Android, you can install additional Android SDKs from this screen.
+> Если вам требуется поддержка более ранних версий Android, то можете установить дополнительные Android SDK на этом же экране.
 
-#### 3. Set up paths
+#### 3. Настройте пути
 
-The React Native command line interface requires the `ANDROID_HOME` environment variable to be set up.
+Интерфейсу командной строки React Native необходима переменная среды `ANDROID_HOME`.
 
 <block class="linux android" />
 
-Create or edit your `~/.bashrc` file and add the following lines:
+Создайте или измените файл `~/.bashrc`, добавив в него следующие пару строк:
 
 ```
 export ANDROID_HOME=~/Android/Sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 ```
 
-The second line will add the `android` tool to your path, which will come in handy in the next step.
+Вторая строка добавит инструмент `android` в переменную пути, который пригодится на следующем шаге.
 
-> Please make sure you export the correct path for `ANDROID_HOME` if you did not install the Android SDK using Android Studio.
+> Если вы не станавливали Android SDK с помощью Android Studio, убедитесь что вы экспортируете правильный путь для `ANDROID_HOME`.
 
 <block class="windows android" />
 
-Go to `Control Panel` → `System and Security` → `System` → `Change settings` →
-`Advanced System Settings` → `Environment variables` → `New`, then enter the path to your Android SDK.
+Выберите `Control Panel` → `System and Security` → `System` → `Change settings` →
+`Advanced System Settings` → `Environment variables` → `New` и укажите путь к вашему Android SDK.
 
-![env variable](img/react-native-android-sdk-environment-variable-windows.png)
+![переменная среды](img/react-native-android-sdk-environment-variable-windows.png)
 
-> Please make sure you use the correct path for `ANDROID_HOME` if you did not install the Android SDK using Android Studio.
+> Если вы не станавливали Android SDK с помощью Android Studio, убедитесь что вы экспортируете правильный путь для `ANDROID_HOME`.
 
-Restart the Command Prompt to apply the new environment variable.
+Перезапустите командную строку чтобы применить новую переменную среды.
 
 <block class="linux windows android" />
 
-#### 4. Set up your Android Virtual Device
+#### 4. Настройка виртуального устройства Android
 
-Android Studio should have set up an Android Virtual Device for you during installation, but it is very common to run into an issue where Android Studio fails to install the AVD.
+Android Studio должна была настроить виртуальное устройство Android в процессе установки, но часто случается так что Android Studio не устанавливает AVD (Android Virtual Device).
 
-![Android Studio AVD Manager](img/react-native-tools-avd.png)
+![Менеджер виртуального устройства Android Studio](img/react-native-tools-avd.png)
 
-To see the list of available AVDs, launch the "AVD Manager" from within Android Studio or run the following command in a terminal:
+Чтобы увидеть список доступных AVD, запустите "AVD Manager" из Android Studio или выполниет в терминале следующую команду:
 
 ```
 android avd
 ```
 
-You may follow the [Android Studio User Guide](https://developer.android.com/studio/run/managing-avds.html) to create a new AVD if needed.
+Если вам нужно новое виртуальное устройство, воспользуйтесь [Инструкцией Android Studio](https://developer.android.com/studio/run/managing-avds.html) для его создания.
 
-> If you see "No system images installed for this target." under CPU/ABI, go back to your "SDK Manager" and click on "Show Package Details" under "SDK Platforms". You will then be able to install any missing system images, such as "Google APIs Intel Atom (x86)".
+> Если вы видите ошибку CPU/ABI "No system images installed for this target.", вернитесь в "SDK Manager" и выберите "Show Package Details" из "SDK Platforms". Вы сможете установить любой из недостающих образов, например "Google APIs Intel Atom (x86)".
 
 <block class="linux android" />
 
-### Watchman (optional)
+### Watchman (необязательно)
 
-Follow the [Watchman installation guide](https://facebook.github.io/watchman/docs/install.html#build-install) to compile and install Watchman from source.
+Следуйте [инструкции по установке Watchman](https://facebook.github.io/watchman/docs/install.html#build-install) чтобы скомпилировать и установить Watchman из исходного кода.
 
-> [Watchman](https://facebook.github.io/watchman/docs/install.html) is a tool by Facebook for watching
-changes in the filesystem. It is highly recommended you install it for better performance, but it's alright to skip this if you find the process to be tedious.
+> [Watchman](https://facebook.github.io/watchman/docs/install.html) это инструмент Facebook для наблюдения за изменениями в файловой системе. Рекомендуется установить его для максимальной производительности, но этот шаг можно пропустить если у вас возникнут серьезные сложности при установке.
 
 <block class="mac ios android" />
 
@@ -280,7 +278,7 @@ changes in the filesystem. It is highly recommended you install it for better pe
 
 <block class="mac ios" />
 
-Use the React Native command line interface to generate a new React Native project called "AwesomeProject", then run `react-native run-ios` inside the newly created folder.
+С помощью интерфейса командной строки React Native создайте новый проект React Native под названием "AwesomeProject", а затем выполните `react-native run-ios` в созданной папке.
 
 ```
 react-native init AwesomeProject
@@ -288,13 +286,13 @@ cd AwesomeProject
 react-native run-ios
 ```
 
-You should see your new app running in the iOS Simulator shortly.
+Вскоре вы должны увидеть свое приложение в симуляторе iOS.
 
-`react-native run-ios` is just one way to run your app. You can also run it directly from within Xcode or Nuclide.
+`react-native run-ios` это только один из способов запустить ваше мобильное приложение. Вы также можете запустить его непосредственно из Xcode или Nuclide.
 
 <block class="mac android" />
 
-Use the React Native command line interface to generate a new React Native project called "AwesomeProject", then run `react-native run-android` inside the newly created folder.
+С помощью интерфейса командной строки React Native создайте новый проект React Native под названием "AwesomeProject", а затем выполните `react-native run-android` в созданной папке.
 
 ```
 react-native init AwesomeProject
@@ -302,7 +300,7 @@ cd AwesomeProject
 react-native run-android
 ```
 
-Спустя недолгое время вы увидите приложение, запущенное в эмуляторе Android. `react-native run-android`  это только один из нескольких способой запустить ваше мобильное приложение. Вы также можете запустить его непосредственно из Android Studio или Nuclide.
+Вскоре вы увидите приложение, запущенное в эмуляторе Android. `react-native run-android`  это только один из нескольких способой запустить ваше мобильное приложение. Вы также можете запустить его непосредственно из Android Studio или Nuclide.
 
 <block class="mac ios android" />
 

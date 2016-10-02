@@ -1,8 +1,8 @@
 ---
 id: testing
-title: Testing
+title: Тестирование
 layout: docs
-category: Guides
+category: Руководства
 permalink: docs/testing.html
 next: javascript-environment
 previous: debugging

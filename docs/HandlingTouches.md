@@ -1,8 +1,8 @@
 ---
 id: handling-touches
-title: Handling Touches
+title: Нажатия
 layout: docs
-category: Guides
+category: Руководства
 permalink: docs/handling-touches.html
 next: animations
 previous: images

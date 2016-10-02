@@ -1,8 +1,8 @@
 ---
 id: linking-libraries-ios
-title: Linking Libraries
+title: Привязка библиотек
 layout: docs
-category: Guides (iOS)
+category: Руководства (iOS)
 permalink: docs/linking-libraries-ios.html
 next: running-on-device-ios
 previous: native-components-ios

@@ -1,8 +1,8 @@
 ---
 id: communication-ios
-title: Communication between native and React Native
+title: Коммуникация нативного и React Native
 layout: docs
-category: Guides (iOS)
+category: Руководства (iOS)
 permalink: docs/communication-ios.html
 next: native-modules-android
 previous: running-on-simulator-ios

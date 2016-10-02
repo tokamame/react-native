@@ -1,8 +1,8 @@
 ---
 id: direct-manipulation
-title: Direct Manipulation
+title: Непосредственная манипуляция
 layout: docs
-category: Guides
+category: Руководства
 permalink: docs/direct-manipulation.html
 next: debugging
 previous: timers

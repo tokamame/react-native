@@ -1,8 +1,8 @@
 ---
 id: running-on-device-ios
-title: Running On Device
+title: Запуск на устройстве
 layout: docs
-category: Guides (iOS)
+category: Руководства (iOS)
 permalink: docs/running-on-device-ios.html
 next: running-on-simulator-ios
 previous: linking-libraries-ios

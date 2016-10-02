@@ -1,8 +1,8 @@
 ---
 id: performance
-title: Performance
+title: Производительность
 layout: docs
-category: Guides
+category: Руководства
 permalink: docs/performance.html
 next: upgrading
 previous: navigation

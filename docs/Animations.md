@@ -1,8 +1,8 @@
 ---
 id: animations
-title: Animations
+title: Анимация
 layout: docs
-category: Guides
+category: Руководства
 permalink: docs/animations.html
 next: accessibility
 previous: handling-touches

@@ -1,8 +1,8 @@
 ---
 id: upgrading
-title: Upgrading
+title: Новые версии
 layout: docs
-category: Guides
+category: Руководства
 permalink: docs/upgrading.html
 next: platform-specific-code
 previous: performance

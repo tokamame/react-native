@@ -1,8 +1,8 @@
 ---
 id: navigation
-title: Navigation
+title: Навигация
 layout: docs
-category: Guides
+category: Руководства
 permalink: docs/navigation.html
 next: performance
 previous: javascript-environment

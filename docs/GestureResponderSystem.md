@@ -1,8 +1,8 @@
 ---
 id: gesture-responder-system
-title: Gesture Responder System
+title: Определение жестов
 layout: docs
-category: Guides
+category: Руководства
 permalink: docs/gesture-responder-system.html
 next: native-modules-ios
 previous: platform-specific-code

@@ -1,8 +1,8 @@
 ---
 id: native-modules-android
-title: Native Modules
+title: Нативные модули
 layout: docs
-category: Guides (Android)
+category: Руководства (Android)
 permalink: docs/native-modules-android.html
 next: native-components-android
 previous: communication-ios

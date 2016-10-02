@@ -1,8 +1,8 @@
 ---
 id: accessibility
-title: Accessibility
+title: Специальные возможности
 layout: docs
-category: Guides
+category: Руководства
 permalink: docs/accessibility.html
 next: timers
 previous: animations

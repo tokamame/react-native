@@ -1,8 +1,8 @@
 ---
 id: running-on-device-android
-title: Running On Device
+title: Запуск на устройстве
 layout: docs
-category: Guides (Android)
+category: Руководства (Android)
 permalink: docs/running-on-device-android.html
 next: signed-apk-android
 props: native-components-android

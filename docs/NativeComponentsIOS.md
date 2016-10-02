@@ -1,8 +1,8 @@
 ---
 id: native-components-ios
-title: Native UI Components
+title: Нативные компоненты UI
 layout: docs
-category: Guides (iOS)
+category: Руководства (iOS)
 permalink: docs/native-components-ios.html
 next: linking-libraries-ios
 previous: native-modules-ios

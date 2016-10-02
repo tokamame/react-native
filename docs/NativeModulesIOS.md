@@ -1,8 +1,8 @@
 ---
 id: native-modules-ios
-title: Native Modules
+title: Нативные модули
 layout: docs
-category: Guides (iOS)
+category: Руководства (iOS)
 permalink: docs/native-modules-ios.html
 next: native-components-ios
 previous: gesture-responder-system

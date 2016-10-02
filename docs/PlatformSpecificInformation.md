@@ -1,8 +1,8 @@
 ---
 id: platform-specific-code
-title: Platform Specific Code
+title: Платформозавимимый код
 layout: docs
-category: Guides
+category: Руководства
 permalink: docs/platform-specific-code.html
 next: gesture-responder-system
 previous: upgrading

@@ -1,8 +1,8 @@
 ---
 id: troubleshooting
-title: Troubleshooting
+title: Решение проблем
 layout: docs
-category: Quick Start
+category: Быстрый старт
 permalink: docs/troubleshooting.html
 ---
 

@@ -1,8 +1,8 @@
 ---
 id: android-building-from-source
-title: Building React Native from source
+title: Сборка React Native из исходного кода
 layout: docs
-category: Guides (Android)
+category: Руководства (Android)
 permalink: docs/android-building-from-source.html
 next: activityindicator
 previous: android-ui-performance

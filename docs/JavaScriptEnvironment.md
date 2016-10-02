@@ -1,8 +1,8 @@
 ---
 id: javascript-environment
-title: JavaScript Environment
+title: Среда JavaScript
 layout: docs
-category: Guides
+category: Руководства
 permalink: docs/javascript-environment.html
 next: navigation
 previous: testing

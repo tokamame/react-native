@@ -1,8 +1,8 @@
 ---
 id: running-on-simulator-ios
-title: Running On Simulator
+title: Запуск на симуляторе
 layout: docs
-category: Guides (iOS)
+category: Руководства (iOS)
 permalink: docs/running-on-simulator-ios.html
 next: communication-ios
 previous: running-on-device-ios

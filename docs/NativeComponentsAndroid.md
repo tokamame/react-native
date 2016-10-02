@@ -1,8 +1,8 @@
 ---
 id: native-components-android
-title: Native UI Components
+title: Нативные компоненты UI
 layout: docs
-category: Guides (Android)
+category: Руководства (Android)
 permalink: docs/native-components-android.html
 next: running-on-device-android
 previous: native-modules-android

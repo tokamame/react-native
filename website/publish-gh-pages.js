@@ -15,7 +15,7 @@ const CIRCLE_BRANCH = process.env.CIRCLE_BRANCH;
 const CIRCLE_PROJECT_USERNAME = process.env.CIRCLE_PROJECT_USERNAME;
 const CI_PULL_REQUEST = process.env.CI_PULL_REQUEST;
 const GIT_USER = process.env.GIT_USER;
-const remoteBranch = `https://${GIT_USER}@github.com/facebook/react-native.git`;
+const remoteBranch = `https://${GIT_USER}@github.com/egeshi/react-native.git`;
 
 if (!which(`git`)) {
   echo(`Sorry, this script requires git`);
@@ -43,7 +43,7 @@ if (branchWithLatestTag.indexOf(`-stable`) !== -1) {
   latestVersion = branchWithLatestTag.slice(0, branchWithLatestTag.indexOf(`-stable`));
 }
 
-if (!CI_PULL_REQUEST && CIRCLE_PROJECT_USERNAME === `facebook`) {
+if (!CI_PULL_REQUEST && CIRCLE_PROJECT_USERNAME === `egeshi`) {
   echo(`Building branch ${version}, preparing to push to gh-pages`);
   // if code is running in a branch in CI, commit changes to gh-pages branch
   cd(`build`);
@@ -93,6 +93,7 @@ if (!CI_PULL_REQUEST && CIRCLE_PROJECT_USERNAME === `facebook`) {
     // versions.html is located in root of website and updated with every release
     cp(`../react-native/versions.html`, `.`);
   }
+
   // generate to root folder when commit is tagged as latest, i.e. stable and needs to be shown at the root of repo
   if (currentCommit === latestTagCommit) {
     echo(`------------ DEPLOYING latest`);
@@ -107,10 +108,11 @@ if (!CI_PULL_REQUEST && CIRCLE_PROJECT_USERNAME === `facebook`) {
     cd(`build/react-native-gh-pages`);
     // blog, showcase, support are copied separately
     let toCopy = ls(`../react-native`)
-      .filter(file => (file !== `blog`) && (file !== `showcase.html`) && (file !== `support.html`))
-      .map(file => `../react-native/${file}`);
+        .filter(file => (file !== `blog`) && (file !== `showcase.html`) && (file !== `support.html`))
+        .map(file => `../react-native/${file}`);
     cp(`-R`, toCopy, `.`);
   }
+
   // blog, showcase, support are versionless, we always build them in root file
   if (areVersionlessSectionsToBeDeployed) {
     echo(`------------ COPYING blog`);

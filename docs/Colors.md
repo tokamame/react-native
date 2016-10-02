@@ -1,8 +1,8 @@
 ---
 id: colors
-title: Colors
+title: Цвета
 layout: docs
-category: Guides
+category: Руководства
 permalink: docs/colors.html
 next: images
 previous: integration-with-existing-apps

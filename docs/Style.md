@@ -1,6 +1,6 @@
 ---
 id: style
-title: Стиль
+title: Стили
 layout: docs
 category: Основы
 permalink: docs/style.html

@@ -1,8 +1,8 @@
 ---
 id: android-ui-performance
-title: Profiling Android UI Performance
+title: Производительность Android UI
 layout: docs
-category: Guides (Android)
+category: Руководства (Android)
 permalink: docs/android-ui-performance.html
 next: android-building-from-source
 previous: signed-apk-android
