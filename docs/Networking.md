@@ -12,7 +12,7 @@ previous: using-a-listview
 
 ## Использование Fetch
 
-React Native предоставляет для подобных потребностей [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) Fetch покажется более знакомым если вы прежде использовали `XMLHttpRequest` или другие сетевые API. Для дополнительной информации вы можете обратиться к руководству MDN по [использованию Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) for additional information.
+React Native предоставляет для подобных потребностей [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). Fetch покажется более знакомым, если вы прежде использовали `XMLHttpRequest` или другие сетевые API. Для дополнительной информации вы можете обратиться к руководству MDN по [использованию Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
 
 #### Создание запросов
 
@@ -130,4 +130,4 @@ ws.onclose = (e) => {
 };
 ```
 
-Теперь ваше мобильное приложение может выводить на экран любые данные, и вам, вероятно, скоро понадобится организовать этот контент в виде несколько экранов. Чтобы управлять переходами между этими экранами, нужно узнать о [навигаторах](/react-native/docs/using-navigators.html).
+Теперь ваше мобильное приложение может выводить на экран любые данные, и вам, вероятно, скоро понадобится организовать этот контент в виде нескольких экранов. Чтобы управлять переходами между этими экранами, нужно узнать о [навигаторах](/react-native/docs/using-navigators.html).
